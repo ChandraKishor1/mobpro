@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import 'ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+html, body { height: 100%;width: 100%;overflow-x: hidden;}
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+.custom .carousel>div img {
+    border-radius: 50%!important;
+    border:2px solid white;
+  }
+@media (min-width: 320px) and (max-width :435px){
+  html, body{
+    height: 100%;width: fit-content;overflow-x: hidden;
+  }
+}
