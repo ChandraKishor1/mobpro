@@ -1,5 +1,5 @@
 import { trigger, state, style, transition, animate, AnimationBuilder, AnimationPlayer } from '@angular/animations';
-import { AfterViewInit, Component,NgZone, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, QueryList, ViewChild, ViewChildren, ChangeDetectorRef, HostBinding, HostListener } from '@angular/core';
+import { AfterViewInit, Component,NgZone, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, QueryList, ViewChild, ViewChildren, ChangeDetectorRef, Renderer2 } from '@angular/core';
 import { fadeInDown } from 'ng-animate';
 
 import { TextAnimation } from 'ngx-teximate';
@@ -9,6 +9,7 @@ import { ApiService } from '../api.service';
 export interface CardData {
   imageId: string;
   state: "default" | "flipped" | "matched";
+  msg:string;
 }
 
 @Component({
@@ -27,35 +28,28 @@ export interface CardData {
       state(
         "flipped",
         style({
+        
           transform: "rotateY(180deg)"
         })
       ),
       state(
         "matched",
         style({
-          visibility: "false",
+         
           transform: "scale(0.05)",
-          opacity: 0
+          
         })
       ),
       transition("default => flipped", [animate("400ms")]),
       transition("flipped => default", [animate("400ms")]),
-      transition("* => matched", [animate("400ms")])
+      // transition("* => matched", [animate("400ms")])
     ])
   ]
 })
 
 
 export class HomeComponent implements OnInit,AfterViewInit,OnChanges {
-  // tops = 0;
-  // @HostBinding('class.header')
-  // isFixed: boolean=false;
-  // @HostListener('window:scroll', [])
-  // onWindowScroll() {
-  //   this.tops = window.pageYOffset;
-  //   this.isFixed = this.tops > 0;
-  // }
-
+  @ViewChild('myhome') myhome:any;
   @ViewChild('teximate') teximate:any;
   disable:boolean=false;
   @ViewChild('publisher', { static: false })
@@ -84,40 +78,46 @@ width:any;
   imageData:CardData[]=[
     {
     imageId: "assets/design.jpg",
-    state: "default"
+    state: "default",
+    msg:"A specialization of web design that deals with the controls people use to interact with a website or app."
   },
   {
     imageId: "assets/web.jpg",
-    state: "default"
+    state: "default",
+    msg:"The work that happens behind the scenes to make a website look great, work fast and perform well with a seamless user experience. "
   },
   
   {
     imageId: "assets/app.jpg",
-    state: "default"
+    state: "default",
+    msg:'The process of creating software applications that run on a mobile device, and a typical mobile application utilizes a network connection to work with remote computing resources.'
   },
   {
     imageId: "assets/affiliate.jpg",
-    state: "default"
+    state: "default",
+    msg:'A marketing arrangement in which affiliates receive a commission for each visit, signup or sale they generate for a merchant. '
   },
-  {
-    imageId: "assets/data.jpg",
-    state: "default"
-  },
+  // {
+  //   imageId: "assets/data.jpg",
+  //   state: "default"
+  // },
   {
     imageId: "assets/maintenance.jpg",
-    state: "default"
+    state: "default",
+    msg:' It is the process of changing, modifying, and updating software to keep up with customer needs.'
   },
-  {
-    imageId: "assets/testing.jpg",
-    state: "default"
-  },
-  {
-    imageId: "assets/cms.jpg",
-    state: "default"
-  },
+  // {
+  //   imageId: "assets/testing.jpg",
+  //   state: "default"
+  // },
+  // {
+  //   imageId: "assets/cms.jpg",
+  //   state: "default"
+  // },
   {
     imageId: "assets/vas.jpg",
-    state: "default"
+    state: "default",
+    msg:'  Those services that are offered by telecom service providers to customers beyond the core services like SMS, voice and data.'
   }
 ];
   url: any;
@@ -140,7 +140,7 @@ width:any;
     animates = [0, 2, 4, 12, 14];
     cellWidth!: number;
     marginTop:number=-((this.top * this.minScale) - this.top)/2;
-  constructor(private fb:FormBuilder,private builder: AnimationBuilder,private myapi:ApiService,private ng :NgZone,private cdr: ChangeDetectorRef) {
+  constructor(private renderer: Renderer2,private fb:FormBuilder,private builder: AnimationBuilder,private myapi:ApiService,private ng :NgZone,private cdr: ChangeDetectorRef) {
 this.videourl='assets/work.mp4'
   let x=['web','app','affiliate','testing','vas'];
   let y=[];
@@ -170,6 +170,7 @@ localStorage.setItem('width',JSON.stringify(window.screen.availWidth) )
 
     }
   ngOnInit(): void {
+    this.check()
     // this. advertiser.nativeElement.play()
     for(let i=0;i<10;i++){
       let d :any=[];
@@ -182,7 +183,6 @@ this.image.push(d);
     console.log("oninit");
    this.width=window.screen.width;
    this.widths=localStorage.getItem('width')
-
   //  console.log(JSON.parse(this.widths));
    
  
@@ -205,11 +205,6 @@ this.image.push(d);
       this.publisher.nativeElement.pause();
       btn!.innerHTML = "Play";
     }
-  }
-  public offset() {
-    // console.log(window.pageYOffset)
-    return window.pageYOffset
-
   }
   submit(){
   //   console.log(this.form.value);
@@ -257,7 +252,12 @@ this.image.push(d);
 //   }
   
 
-  
+  check(){
+    if(window.screenY){
+      // this.myhome.nativeElement.style.position='fixed'
+      this.renderer.addClass(this.myhome.nativeElement, 'fixed-position');
+    }
+  }
 
   customOptions: OwlOptions = {
     loop: true,
@@ -303,8 +303,13 @@ this.image.push(d);
   cardClicked(data:any) {
     if (data.state === "default") {
       data.state = "flipped";
-    } else {
+    }
+     else if(data.state==='matched') {
       data.state = "default";
+    }
+    else {
+      data.state = "default";
+
     }
   }
   playVideo(e:any) {

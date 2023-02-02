@@ -12,9 +12,11 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 // import { SlickCarouselModule } from 'ngx-slick-carousel'; 
 import { CarouselModule } from 'ngx-owl-carousel-o';
 import { MobComponent } from './mob/mob.component';
-import { ReactiveFormsModule,FormsModule } from '@angular/forms';
-import {MatInputModule} from '@angular/material/input';
-
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
+// import { NgxHideOnScrollModule} from
+import { NgxHideOnScrollModule } from 'ngx-hide-on-scroll';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap'
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,8 +25,10 @@ import {MatInputModule} from '@angular/material/input';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,RouterModule,
-    BrowserAnimationsModule,TeximateModule,HttpClientModule,FlexLayoutModule,CarouselModule,ReactiveFormsModule,FormsModule,MatInputModule
+    AppRoutingModule, RouterModule,
+    BrowserAnimationsModule, TeximateModule, HttpClientModule,
+     FlexLayoutModule, CarouselModule,
+      ReactiveFormsModule, FormsModule, MatInputModule,NgxHideOnScrollModule, NgbModule
   ],
   providers: [],
   bootstrap: [AppComponent]

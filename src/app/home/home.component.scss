@@ -1,53 +1,120 @@
-.header-fixed{
-  position: fixed;
-  transition: all 0.3s ease-in-out;
-  top: 0;
-  left: 0;
-  right: 0;
+.cardoffer {
+  color: white;
+  text-align: center;
+  font-style: italic;
+  font-size: 17px;
+  padding-top: 10vh;
+  justify-content: center;
 }
+
+.name {
+  margin-left: 16%;
+}
+
+.offerimg {
+  width: 33%;
+}
+
+.name input {
+  border-top-style: none;
+  border-right-style: none;
+  border-left-style: none;
+  border-bottom-style: groove;
+  //  border: none;
+  line-height: 1.2;
+  width: 42%;
+  box-shadow: none;
+  // color: #5DC098;
+}
+
+.iconlogo {
+  position: relative;
+  top: 6vh;
+  left: 3vw;
+}
+
+header {
+  transition: transform 0.3s ease-in-out;
+  position: relative;
+  top: 0;
+  width: 100%;
+  color: white;
+  background-color: #4c4c4e;
+  padding: 0 2rem;
+  z-index: 1111;
+  height: 110px;
+}
+
+.svgdata {
+  position: relative;
+  right: -3vw;
+
+}
+
+.svgdat {
+  position: relative;
+  right: 4vw;
+  // top: 6vh;
+}
+
+header.nav--hidden {
+  transform: translateY(-100%);
+}
+
 .column {
-    // float: right;
-    width: 30%;
-    padding: 1%;
-    // display: flex;
-    margin-left: 10px;
-  }
-  
-  /* Clearfix (clear floats) */
-  .row::after {
-    
-    content: "";
-    clear: both;
-    display: table;
-  }
-  .column img{
-      width:100% ;
-      height: 100%;
-      padding-left: 25%;
-  }
+  // float: right;
+  width: 30%;
+  padding: 1%;
+  // display: flex;
+  margin-left: 10px;
+}
+
+/* Clearfix (clear floats) */
+.row::after {
+
+  content: "";
+  clear: both;
+  display: table;
+}
+
+.column img {
+  width: 100%;
+  height: 100%;
+  padding-left: 25%;
+}
+
 .slick-slider {
   width: 90%;
   margin: auto;
 }
-.askAny{
-  margin-top: 30px;height:600px
+
+.askAny {
+  margin-top: 6%;
+  height: 600px
 }
-.forBtn{
-  cursor:pointer !important;position: absolute; left: 36%;
-  bottom:20%;
+
+.forBtn {
+  cursor: pointer !important;
+  position: absolute;
+  left: 36%;
+  bottom: 20%;
 }
-.slid{
+
+.slid {
   position: absoluate;
   height: 400px;
   font-style: italic;
-  margin-top: 12% 
+  margin-top: -5%;
+  // margin-bottom: 2%; 
 }
-.slides{
+
+.slides {
   padding-bottom: 10%;
   margin-top: 5%;
   color: red;
   font-style: italic;
 }
+
 .display {
   display: none;
 }
@@ -62,7 +129,7 @@ images {
 }
 
 .header {
-  background-color: #1C315E;
+  background-color: #4c4c4e;
   position: relative;
   z-index: 11111;
   height: 115px;
@@ -72,9 +139,10 @@ images {
 }
 
 textarea {
-  height: 100px;
+  height: 138px;
   resize: none;
   width: 81%;
+  border-radius: 28px;
 }
 
 .header a {
@@ -91,8 +159,8 @@ textarea {
 }
 
 .footer {
-  background-color: #12161f;
-  height: 250px;
+  background-color: #1a1a1a;
+  // height: 250px;
   // margin-top: 12px;  for testing like taptica on 20-01-2022
 }
 
@@ -109,9 +177,9 @@ textarea {
 .footer li {
   cursor: pointer;
   color: white;
-  font-size: 25px;
+  text-align: center;
   font-style: italic;
-  
+  width: 17%;
 }
 
 .myVideo {
@@ -152,7 +220,9 @@ textarea {
 
 }
 
-video {display: block;}
+video {
+  display: block;
+}
 
 .video-container {
   width: 100%;
@@ -206,6 +276,8 @@ video {display: block;}
   width: 100%;
   height: 100%;
   margin: 0 auto;
+
+
 }
 
 
@@ -239,6 +311,7 @@ video {display: block;}
   width: 100%;
   height: 100%;
   border-radius: inherit;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   background-color: #1C315E;
 
@@ -251,7 +324,9 @@ video {display: block;}
 }
 
 .front {
+  -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg);
+  // background-color: #1C315E;
 }
 
 .clients {
@@ -283,8 +358,9 @@ agm-map {
   display: flex;
   flex-direction: column;
   height: 75%;
-  position: inherit;
-  margin-left:30%
+  position: relative;
+  margin-left: 30%;
+  top: 1%;
 }
 
 // .contact-form input {
@@ -332,7 +408,7 @@ form-control {
 }
 
 .selection {
-  margin-left: 15%;
+  margin-left: 19%;
 }
 
 .selection select {
@@ -342,7 +418,7 @@ form-control {
   border-bottom-style: groove;
   //  border: none;
   line-height: 1.2;
-  width: 45%;
+  width: 30%;
   box-shadow: none;
   color: #5DC098;
 }
@@ -363,7 +439,7 @@ form-control {
   border-bottom-style: groove;
   //  border: none;
   line-height: 1.2;
-  width: 54%;
+  width: 39.4%;
   box-shadow: none;
   // color: #5DC098;
 }
@@ -375,7 +451,7 @@ form-control {
   border-bottom-style: groove;
   //  border: none;
   line-height: 1.2;
-  width: 68%;
+  width: 44%;
   box-shadow: none;
   // color: #5DC098;
 }
@@ -406,7 +482,7 @@ form-control {
   transition: all 0.3s;
 }
 
- button {
+button {
   // border-radius: 50px;
   // background-color: transparent;
   // border: 2px solid #fff;
@@ -428,15 +504,15 @@ form-control {
 }
 
 .contact-form label {
-  font-size: 20px
+  font-size: 17px
 }
 
 .selection select {
-  font-size: 20px
+  font-size: 15px;
 }
 
 .email {
-  margin-left: 13%
+  margin-left: 16%
 }
 
 .contact-form div {
@@ -469,7 +545,7 @@ form-control {
 }
 
 .offermargin {
-  margin-top: 24%;
+  margin-top: 10%;
 }
 
 .contus {
@@ -478,7 +554,7 @@ form-control {
 
 .address {
   font-size: 20px;
-  font-style: italic;
+  // font-style: italic;
   padding-left: 7%;
 
 }
@@ -493,62 +569,137 @@ form-control {
 .conus {
   margin-left: -5%;
 }
-.contents{
+
+.contents {
   justify-content: center;
 }
+
+.contents a {
+  color: white;
+  font-size: 15px;
+  font-style: italic;
+}
+
+.contenting {
+  justify-content: center;
+}
+
+.contenting a {
+  color: gray;
+  font-size: 15px;
+  font-style: italic;
+}
+
 @media (min-width: 320px) and (max-width :435px) {
+  .offerimg {
+    width: 100%;
+  }
+
+  .iconlogo {
+    position: relative;
+    top: 5vh;
+    left: 8vw;
+  }
+
+  .column {
+    // float: right;
+    width: 30vw;
+    padding: 0%;
+    // display: flex;
+    margin-left: 0px;
+  }
+
+  .column img {
+    width: 100%;
+    height: 100%;
+    padding-left: 25%;
+  }
+
+  .footer li {
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    font-style: italic;
+    width: 33vw;
+  }
+
+  .carousel-item {
+    margin-top: 10vh;
+  }
+
+  .svgdata {
+    position: relative;
+    right: -3vw;
+    top: 6vh;
+  }
+
+  .svgdat {
+    position: relative;
+    right: 4vw;
+    top: 6vh;
+  }
+
+  // .slidedata{
+  //   position: relative;
+  //   margin-top:3vh
+  // }
   .logo {
     height: 72px;
     width: 80px;
     margin-top: 12px;
-    margin-left: 0.2%;
+    margin-left: 3%;
     border-radius: 7px;
   }
-.menulogo{
-  position: relative;
-  left: 4%;
-  bottom: 7vh;
-}
 
-.logos  {
-  
-  background-color: transparent;
-  box-shadow: none;
-  border-radius: none;
-}
-.logos  li a{
-  font-style: italic;
-  color: white;
-  box-shadow: none;
-
-}
-  .Mobile{
-  
-      background-color: #1C315E;
-      position: relative;
-     
-      height: 115px;
-  
-      
-    
-    
+  .menulogo {
+    position: absolute;
+    right: 2%;
+    bottom: 7vh;
   }
-  
+
+  .logos {
+
+    background-color: transparent;
+    box-shadow: none;
+    border-radius: none;
+  }
+
+  .logos li a {
+    font-style: italic;
+    color: black;
+    box-shadow: none;
+
+  }
+
+  .Mobile {
+
+    background-color: #4c4c4e;
+    position: relative;
+
+    height: 115px;
+
+
+
+
+  }
+
   .footer p {
     // position: relative;
     // left: 0%;
     // right: 24%;
     color: white;
     text-align: inherit;
-    padding-left: 1%;
+    padding-left: 10%;
     // font-size: 60px;
-  
+
     // top: 54px;
   }
-  .contents{
+
+  .contents {
     justify-content: inherit;
     padding-left: 0.5%;
   }
+
   .arrow-button {
     font-weight: 600;
     box-shadow: 7px 7px 5px rgb(0 0 0 / 30%);
@@ -559,11 +710,13 @@ form-control {
     // padding-right: 35px;
     position: relative;
   }
+
   .submit-btn {
     border: 2px solid #2fb7a7;
     background-color: #2fb7a7;
     margin: 0;
-    margin-left: 1%;
+    margin-left: 15%;
+    margin-top: 6vh;
     // width: 207px;
     border-color: #2fb7a7;
     // font-weight: 600;
@@ -571,72 +724,93 @@ form-control {
     // margin-top: auto;
     height: 40px;
   }
+
   .selection select {
     font-size: 12px
   }
+
   .company {
     margin-left: 0%;
   }
-  .company input{
+
+  .company input {
     width: 54vw;
   }
+
   .email {
     margin-left: 0%
   }
-  .email input{
+
+  .email input {
     width: 66vw;
   }
+
+  .name {
+    margin-left: 0%
+  }
+
+  .name input {
+    width: 66vw;
+  }
+
   .contact-form {
     position: inherit;
-    margin-left:0%;
+    margin-left: 0%;
     display: flex;
     flex-direction: column;
     height: 75%;
   }
+
   .title {
-    
-    
+
+
     margin-left: 1%;
   }
-  .forBtn{
-    cursor:pointer !important;position: absolute; justify-self: center;
-    bottom:20%;
+
+  .forBtn {
+    cursor: pointer !important;
+    position: absolute;
+    justify-self: center;
+    bottom: 20%;
   }
-  .slid{
+
+  .slid {
     position: absoluate;
     height: 200px;
     font-style: italic;
-    margin-top: 1.2% 
+    margin-top: -7%;
   }
-  .slides{
+
+  .slides {
     padding-bottom: 0%;
-    margin-top: 1.5%;
+    margin-top: 4vh;
     color: red;
     font-style: italic;
   }
 
-  .carousels{
-    display:flex;
-    margin-left:0 !important;
-    margin-right:auto;
+  .carousels {
+    display: flex;
+    margin-left: 0 !important;
+    margin-right: auto;
 
   }
-  .carousels::after{
-    content:' ';
+
+  .carousels::after {
+    content: ' ';
     display: block;
     clear: both;
   }
 
-  .carousels>div{
-    float:left;
-    margin-right:-100%;
-    cursor:pointer;
+  .carousels>div {
+    float: left;
+    margin-right: -100%;
+    cursor: pointer;
     transform-origin: top left;
   }
 
   .carousels>div img {
     border-radius: 1rem;
-    box-shadow: 0 .5rem 1rem rgba(0,0,0,.35)
+    box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .35)
   }
 
   .width {
@@ -681,11 +855,12 @@ form-control {
   }
 
   .textlabel {
-    margin-left: 1%;
+    margin-left: 20vw;
+    // text-align: center;
   }
 
   .header {
-    background-color: #1C315E;
+    background-color: #4c4c4e;
     position: relative;
     z-index: 11111;
     height: 115px;
@@ -708,24 +883,25 @@ form-control {
   }
 
   .offermargin {
-    margin-top: 1.8%;
+    margin-top: 6vh;
   }
 
   .contus {
-    padding-left:0px;
+    padding-left: 0px;
   }
 
   .address {
     font-size: 20px;
-    font-style: italic;
-    padding-left: 0px;
+    // font-style: italic;
+    padding-left: 10vw;
 
   }
 
   textarea {
     height: 100px;
     resize: none;
-    width: 86vw
+    width: 86vw;
+    border-radius: 28px;
   }
 
   input {
@@ -733,13 +909,14 @@ form-control {
   }
 
   .offer {
-    padding-left: 0%;
-    padding-right: 0%;
+    padding-left: 0px;
+    padding-right: 0px;
   }
+
   .selection {
     margin-left: 1vw;
   }
-  
+
   .selection select {
     border-top-style: none;
     border-right-style: none;
@@ -754,6 +931,22 @@ form-control {
 }
 
 @media (min-width: 500px) and (max-width :600px) {
+  .offerimg {
+    width: 100%;
+  }
+
+  .carousel-item {
+    margin-top: 10vh;
+  }
+
+  .footer li {
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    font-style: italic;
+    // width: 17%;
+  }
+
   .display {
     display: block;
   }
@@ -768,7 +961,7 @@ form-control {
   }
 
   .header {
-    background-color: #1C315E;
+    background-color: #4c4c4e;
     position: relative;
     z-index: 11111;
     height: 115px;
@@ -800,7 +993,7 @@ form-control {
 
   .address {
     font-size: 20px;
-    font-style: italic;
+    // font-style: italic;
     padding-left: 10%;
 
   }
@@ -809,6 +1002,7 @@ form-control {
     height: 100px;
     resize: none;
     width: 86%;
+    border-radius: 28px;
   }
 
   input {
@@ -822,6 +1016,46 @@ form-control {
 }
 
 @media (min-width: 600px) and (max-width :768px) {
+  .offerimg {
+    width: 100%;
+  }
+
+  .name {
+    margin-left: 8%;
+  }
+
+  .name input {
+    width: 66vw;
+  }
+
+  .contact-form label {
+    font-size: 17px
+  }
+
+  .carousel-item {
+    margin-top: 10vh;
+  }
+
+  .footer li {
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    font-style: italic;
+    // width: 17%;
+  }
+
+  .svgdata {
+    position: relative;
+    right: -3vw;
+    top: 6vh;
+  }
+
+  .svgdat {
+    position: relative;
+    right: 4vw;
+    top: 6vh;
+  }
+
   .display {
     display: block;
   }
@@ -836,7 +1070,7 @@ form-control {
   }
 
   .header {
-    background-color: #1C315E;
+    background-color: #4c4c4e;
     position: relative;
     z-index: 11111;
     height: 115px;
@@ -859,7 +1093,7 @@ form-control {
   }
 
   .offermargin {
-    margin-top: 24%;
+    margin-top: 18%;
   }
 
   .contus {
@@ -869,7 +1103,7 @@ form-control {
 
   .address {
     font-size: 20px;
-    font-style: italic;
+    // font-style: italic;
     padding-left: 10%;
 
   }
@@ -877,6 +1111,7 @@ form-control {
   textarea {
     height: 100px;
     resize: none;
+    border-radius: 28px;
     width: 86%
   }
 
@@ -895,7 +1130,7 @@ form-control {
   }
 
   .selection select {
-    width: 40%;
+    width: 30%;
   }
 
   .company {
@@ -903,12 +1138,76 @@ form-control {
   }
 
   .company input {
-    width: 52%;
+    width: 39.4%;
   }
 
 }
 
 @media (min-width: 768px) and (max-width :840px) {
+  .cardoffer{
+    padding-top: 6vh;
+  }
+  .offerimg {
+    width: 50%
+  }
+
+  .contact-form {
+    margin-left: 10%;
+
+  }
+
+  .contact-form label {
+    font-size: 20px;
+  }
+
+  .name {
+    margin-left: 16vw;
+  }
+
+  .name input {
+    width: 33vw;
+  }
+
+  .iconlogo {
+    position: relative;
+    top: 4vh;
+    left: -1vw;
+  }
+
+  .heading {
+    padding-left: 40px;
+  }
+
+  .carousel-item {
+    margin-top: 10vh;
+  }
+
+  .footer li {
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    font-style: italic;
+    width: 17%;
+  }
+
+  .svgdata {
+    position: relative;
+    right: -3vw;
+    top: 6vh;
+  }
+
+  .svgdat {
+    position: relative;
+    right: 4vw;
+    top: 6vh;
+  }
+
+  .title h1 {
+    font-size: 3rem;
+    font-style: italic;
+    color: #000;
+  }
+
   .display {
     display: block;
   }
@@ -919,11 +1218,11 @@ form-control {
   }
 
   .textlabel {
-    margin-left: 20%;
+    margin-left: 30vw;
   }
 
   .header {
-    background-color: #1C315E;
+    background-color: #4c4c4e;
     position: relative;
     z-index: 11111;
     height: 115px;
@@ -946,7 +1245,7 @@ form-control {
   }
 
   .offermargin {
-    margin-top: 24%;
+    margin-top: 18%;
   }
 
   .contus {
@@ -956,19 +1255,29 @@ form-control {
 
   .address {
     font-size: 20px;
-    font-style: italic;
-    padding-left: 10%;
+    // font-style: italic;
+    padding-left: 0%;
 
   }
 
   textarea {
-    height: 100px;
+    height: 138px;
     resize: none;
-    width: 86%;
+    width: 100%;
+    border-radius: 28px;
+    margin-left: 5vw;
   }
 
   input {
     width: 60%;
+  }
+
+  .email {
+    margin-left: 18%;
+  }
+
+  .email input {
+    width: 64%;
   }
 
   .offer {
@@ -977,25 +1286,102 @@ form-control {
   }
 
   .selection {
-    margin-left: 5%;
+    margin-left: 22vw;
 
   }
 
   .selection select {
-    width: 40%;
+    width: 33%;
+    font-size: 17px;
+  }
+
+  .selection option {
+    font-size: 12px !important;
   }
 
   .company {
-    margin-left: 1%;
+    margin-left: 18%;
   }
 
   .company input {
-    width: 52%;
+    width: 52.4%;
   }
 
 }
 
 @media (min-width: 840px) and (max-width :900px) {
+  .cardoffer{
+    padding-top: 6vh;
+  }
+  .email {
+    margin-left: 18vw;
+  }
+
+  .email input {
+    width: 65%;
+  }
+
+  .name {
+    margin-left: 12vw;
+  }
+
+  .name input {
+    width: 33vw;
+  }
+
+  .offerimg {
+    width: 50%;
+  }
+
+  .contact-form label {
+    font-size: 17px
+  }
+
+  .contact-form {
+    margin-left: 17%;
+    justify-content: center;
+  }
+
+  .iconlogo {
+    position: relative;
+    top: 4vh;
+    left: 0vw;
+  }
+
+  .heading {
+    padding-left: 40px;
+  }
+
+  .carousel-item {
+    margin-top: 10vh;
+  }
+
+  .footer li {
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    font-style: italic;
+    width: 17%;
+  }
+
+  .svgdata {
+    position: relative;
+    right: -3vw;
+    top: 6vh;
+  }
+
+  .svgdat {
+    position: relative;
+    right: 5vw;
+    top: 6vh;
+  }
+
+  .title h1 {
+    font-size: 3rem;
+    font-style: italic;
+    color: #000;
+  }
+
   .display {
     display: block;
   }
@@ -1006,11 +1392,11 @@ form-control {
   }
 
   .textlabel {
-    margin-left: 20%;
+    margin-left: 24vw;
   }
 
   .header {
-    background-color: #1C315E;
+    background-color: #4c4c4e;
     position: relative;
     z-index: 11111;
     height: 115px;
@@ -1033,7 +1419,7 @@ form-control {
   }
 
   .offermargin {
-    margin-top: 24%;
+    margin-top: 18%;
   }
 
   .contus {
@@ -1043,20 +1429,20 @@ form-control {
 
   .address {
     font-size: 20px;
-    font-style: italic;
-    padding-left: 10%;
+    // font-style: italic;
+    padding-left: 0px;
 
   }
 
   textarea {
-    height: 100px;
+    height: 138px;
     resize: none;
-    width: 86%;
+    width: 100%;
+    border-radius: 28px;
+    margin-left: 5vw;
   }
 
-  input {
-    width: 60%;;
-  }
+
 
   .offer {
     padding-left: 8%;
@@ -1064,31 +1450,49 @@ form-control {
   }
 
   .selection {
-    margin-left: 5%;
+    margin-left: 20vw;
 
   }
 
   .selection select {
-    width: 40%;;
+    width: 35%;
   }
 
   .company {
-    margin-left: 1%;
+    margin-left: 14vw;
   }
 
   .company input {
-    width: 52%;
+    width: 56%;
   }
 
 }
 
 @media (min-width: 990px) and (max-width : 1040px) {
+  .carousel-item {
+    margin-top: 10vh;
+  }
+
+  .footer li {
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    font-style: italic;
+    width: 17%;
+  }
+
+  .title h1 {
+    font-size: 3rem;
+    font-style: italic;
+    color: #000;
+  }
+
   .display {
     display: none;
   }
 
   .header {
-    background-color: #1C315E;
+    background-color: #4c4c4e;
     position: relative;
     z-index: 11111;
     height: 115px;
@@ -1111,7 +1515,7 @@ form-control {
   }
 
   .offermargin {
-    margin-top: 24%;
+    margin-top: 10%;
   }
 
   .contus {
@@ -1120,19 +1524,21 @@ form-control {
 
   .address {
     font-size: 20px;
-    font-style: italic;
+    // font-style: italic;
     padding-left: 10%;
 
   }
 
   textarea {
-    height: 100px;
+    height: 138px;
     resize: none;
     width: 86%;
+    border-radius: 28px;
   }
 
   input {
-    width: 66%;;
+    width: 66%;
+    ;
   }
 
   .offer {
@@ -1142,12 +1548,26 @@ form-control {
 }
 
 @media (min-width: 1050px) and (max-width : 1198px) {
+  .footer li {
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    font-style: italic;
+    width: 17%;
+  }
+
+  .title h1 {
+    font-size: 3rem;
+    font-style: italic;
+    color: #000;
+  }
+
   .display {
     display: none;
   }
 
   .header {
-    background-color: #1C315E;
+    background-color: #4c4c4e;
     position: relative;
     z-index: 11111;
     height: 115px;
@@ -1175,7 +1595,7 @@ form-control {
   }
 
   .offermargin {
-    margin-top: 24%;
+    margin-top: 10%;
   }
 
   .contus {
@@ -1184,30 +1604,46 @@ form-control {
 
   .address {
     font-size: 20px;
-    font-style: italic;
+    // font-style: italic;
     padding-left: 10%;
 
   }
 
   textarea {
-    height: 100px;
+    height: 138px;
     resize: none;
+    border-radius: 28px;
     width: 86%;
   }
 
   input {
-    width: 66%;;
+    width: 66%;
+    ;
   }
 
 }
 
 @media (min-width: 1260px) and (max-width : 1399px) {
+  .footer li {
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    font-style: italic;
+    width: 17%;
+  }
+
+  .title h1 {
+    font-size: 3rem;
+    font-style: italic;
+    color: #000;
+  }
+
   .display {
     display: none;
   }
 
   .header {
-    background-color: #1C315E;
+    background-color: #4c4c4e;
     position: relative;
     z-index: 11111;
     height: 115px;
@@ -1235,7 +1671,7 @@ form-control {
   }
 
   .offermargin {
-    margin-top: 24%;
+    margin-top: 10%;
   }
 
   .contus {
@@ -1244,19 +1680,21 @@ form-control {
 
   .address {
     font-size: 20px;
-    font-style: italic;
+    // font-style: italic;
     padding-left: 10%;
 
   }
 
   textarea {
-    height: 100px;
+    height: 138px;
+    border-radius: 28px;
     resize: none;
     width: 85%;
   }
 
   input {
-    width: 69%;;
+    width: 69%;
+    ;
   }
 
   .selection {
@@ -1270,24 +1708,38 @@ form-control {
     border-bottom-style: groove;
     //  border: none;
     line-height: 1.2;
-    width: 48%;
+    width: 30%;
     box-shadow: none;
     color: #5DC098;
   }
 
   .company input {
-    width: 59%;
+    width: 39.4%;
   }
 
 }
 
 @media (min-width: 1399px) and (max-width : 1480px) {
+  .footer li {
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    font-style: italic;
+    width: 17%;
+  }
+
+  .title h1 {
+    font-size: 3rem;
+    font-style: italic;
+    color: #000;
+  }
+
   .display {
     display: none;
   }
 
   .header {
-    background-color: #1C315E;
+    background-color: #4c4c4e;
     position: relative;
     z-index: 11111;
     height: 115px;
@@ -1315,7 +1767,7 @@ form-control {
   }
 
   .offermargin {
-    margin-top: 24%;
+    margin-top: 10%;
   }
 
   .contus {
@@ -1324,13 +1776,14 @@ form-control {
 
   .address {
     font-size: 20px;
-    font-style: italic;
+    // font-style: italic;
     padding-left: 10%;
 
   }
 
   textarea {
-    height: 100px;
+    height: 138px;
+    border-radius: 28px;
     resize: none;
     width: 83%
   }
@@ -1350,24 +1803,38 @@ form-control {
     border-bottom-style: groove;
     //  border: none;
     line-height: 1.2;
-    width: 50%;
+    width: 30%;
     box-shadow: none;
     color: #5DC098;
   }
 
   .company input {
-    width: 60%;
+    width: 39.4%;
   }
 
 }
 
 @media (min-width: 1480px) and (max-width : 1650px) {
+  .footer li {
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    font-style: italic;
+    width: 17%;
+  }
+
+  .title h1 {
+    font-size: 3rem;
+    font-style: italic;
+    color: #000;
+  }
+
   .display {
     display: none;
   }
 
   .header {
-    background-color: #1C315E;
+    background-color: #4c4c4e;
     position: relative;
     z-index: 11111;
     height: 115px;
@@ -1395,7 +1862,7 @@ form-control {
   }
 
   .offermargin {
-    margin-top: 24%;
+    margin-top: 10%;
   }
 
   .contus {
@@ -1404,13 +1871,14 @@ form-control {
 
   .address {
     font-size: 20px;
-    font-style: italic;
+    // font-style: italic;
     padding-left: 10%;
 
   }
 
   textarea {
-    height: 100px;
+    height: 138px;
+    border-radius: 28px;
     resize: none;
     width: 83%
   }
@@ -1430,24 +1898,38 @@ form-control {
     border-bottom-style: groove;
     //  border: none;
     line-height: 1.2;
-    width: 50%;
+    width: 30%;
     box-shadow: none;
     color: #5DC098;
   }
 
   .company input {
-    width: 60%;
+    width: 39.4%;
   }
 
 }
 
 @media (min-width: 1650px) and (max-width : 1760px) {
+  .footer li {
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    font-style: italic;
+    width: 17%;
+  }
+
+  .title h1 {
+    font-size: 3rem;
+    font-style: italic;
+    color: #000;
+  }
+
   .display {
     display: none;
   }
 
   .header {
-    background-color: #1C315E;
+    background-color: #4c4c4e;
     position: relative;
     z-index: 11111;
     height: 115px;
@@ -1475,7 +1957,7 @@ form-control {
   }
 
   .offermargin {
-    margin-top: 24%;
+    margin-top: 10%;
   }
 
   .contus {
@@ -1484,13 +1966,14 @@ form-control {
 
   .address {
     font-size: 20px;
-    font-style: italic;
+    // font-style: italic;
     padding-left: 10%;
 
   }
 
   textarea {
-    height: 100px;
+    height: 138px;
+    border-radius: 28px;
     resize: none;
     width: 83%
   }
@@ -1510,24 +1993,38 @@ form-control {
     border-bottom-style: groove;
     //  border: none;
     line-height: 1.2;
-    width: 50%;
+    width: 30%;
     box-shadow: none;
     color: #5DC098;
   }
 
   .company input {
-    width: 60%;
+    width: 39.4%;
   }
 
 }
 
 @media (min-width: 1760px) and (max-width : 1960px) {
+  .footer li {
+    cursor: pointer;
+    color: white;
+    text-align: center;
+    font-style: italic;
+    width: 17%;
+  }
+
+  .title h1 {
+    font-size: 3rem;
+    font-style: italic;
+    color: #000;
+  }
+
   .display {
     display: none;
   }
 
   .header {
-    background-color: #1C315E;
+    background-color: #4c4c4e;
     position: relative;
     z-index: 11111;
     height: 115px;
@@ -1555,7 +2052,7 @@ form-control {
   }
 
   .offermargin {
-    margin-top: 24%;
+    margin-top: 10%;
   }
 
   .contus {
@@ -1564,13 +2061,14 @@ form-control {
 
   .address {
     font-size: 20px;
-    font-style: italic;
+    // font-style: italic;
     padding-left: 10%;
 
   }
 
   textarea {
-    height: 100px;
+    height: 138px;
+    border-radius: 28px;
     resize: none;
     width: 83%
   }
@@ -1590,13 +2088,13 @@ form-control {
     border-bottom-style: groove;
     //  border: none;
     line-height: 1.2;
-    width: 50%;
+    width: 35%;
     box-shadow: none;
     color: #5DC098;
   }
 
   .company input {
-    width: 60%;
+    width: 39.4%;
   }
 
 }

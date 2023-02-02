@@ -4,7 +4,6 @@
       <img src="assets/mobpro.jpg" class="logo" alt="">
     </div>
 
-
     <ul #Home class="nav ">
       <li class="nav-item">
         <a class="nav-link active" (click)="scroll(Home)">Home</a>
@@ -13,7 +12,7 @@
         <a class="nav-link" (click)="scroll(offers)">We Offer</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" (click)="scroll(patners)">Our Patners </a>
+        <a class="nav-link" (click)="scroll(partners)">Our Partners </a>
       </li>
       <li class="nav-item">
         <a class="nav-link" (click)="scroll(advertiser)">Advertisers </a>
@@ -39,36 +38,56 @@
         <!-- <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
       My Profile
     </a> -->
-        <img src="assets/icons/menu.png" alt="" class="nav-link dropdown-toggle menulogo" href="#" role="button"
-          data-bs-toggle="dropdown" aria-expanded="false">
-        <ul class="dropdown-menu logos">
+      
+
+          <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"> -->
+            <img src="assets/icons/menu.png" alt="" class=" menulogo" href="#" role="button"
+          data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop" aria-expanded="false">
+          <!-- </button> -->
+          
+          <div style="background-color: white;width: 50%;" class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+            <div class="offcanvas-header">
+              <!-- <h3 class="offcanvas-title" id="staticBackdropLabel" style="font-style: italic; color: white;">Please Click For Go To Particular Section </h3> -->
+              <!-- <button style="color: white;" type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
+              <i  class="bi bi-x-circle btn-close text-reset"  data-bs-dismiss="offcanvas" aria-label="Close"></i>
+
+            </div>
+            <div class="offcanvas-body">
+
+              <div>
+               <ul class=" nav flex-column logos" data-bs-dismiss="offcanvas">
 
 
-          <li>
-            <a class="dropdown-item" (click)="scroll(home)">Home</a>
+                <li class="nav-item">
+            <a class="nav-link active" (click)="scroll(home)">Home</a>
           </li>
-          <li>
-            <a class="dropdown-item" (click)="scroll(offers)">We Offer</a>
+          <li class="nav-item">
+            <a class="nav-link" (click)="scroll(offers)">We Offer</a>
           </li>
-          <li>
-            <a class="dropdown-item" (click)="scroll(patners)">Our Patners </a>
+          <li class="nav-item">
+            <a class="nav-link" (click)="scroll(partners)">Our Partners </a>
           </li>
-          <li>
-            <a class="dropdown-item" (click)="scroll(advertiser)">Advertisers </a>
+          <li class="nav-item">
+            <a class="nav-link" (click)="scroll(advertiser)">Advertisers </a>
           </li>
-          <li>
-            <a class="dropdown-item" (click)="scroll(publisher)">Publishers </a>
+          <li class="nav-item">
+            <a class="nav-link" (click)="scroll(publisher)">Publishers </a>
           </li>
           <!-- <li class="nav-item">
         <a class="nav-link " style="cursor: pointer;">Why Us?</a>
       </li> -->
-          <li>
-            <a class="dropdown-item" (click)="scroll(askus)">Ask Us</a>
+      <li class="nav-item">
+            <a class="nav-link" (click)="scroll(askus)">Ask Us</a>
           </li>
-          <li>
-            <a class="dropdown-item" (click)="scroll(contact)">Contact Us</a>
+          <li class="nav-item">
+            <a class="nav-link" (click)="scroll(contact)">Contact Us</a>
           </li>
         </ul>
+              </div>
+            </div>
+          </div>
+
+        
       </span>
     </div>
   </div>
@@ -105,8 +124,8 @@
   </div> -->
 
 
-  <div #offers>
-    <div *ngIf="width>620" class="w-100  ">
+  <!-- <div #offers>
+    <div *ngIf="width>620" class="w-100  " style="height:350px">
       <div class="row w-100 container offer">
 
 
@@ -120,14 +139,14 @@
       </div>
 
     </div>
-    <div *ngIf="width<619" class="w-100  ">
+    <div *ngIf="width<619" class="w-100  " style="height: 220px;">
       <div class="row w-100 container offer">
 
 
         <div class="carousels  offermargin" [style.width.px]="cellWidth">
           <div #element class=" justify-content-center " *ngFor="let i of [0, 2, 4, 12, 14]; let index = index"
             (mouseover)="indexToFront(index)" (click)="indexToFront(index)">
-            <img [ngStyle]="{'width':'300px','height':'178px'}" [ngStyle.lt-md]="{'width':'209px','height':'143px'}"
+            <img [ngStyle]="{'width':'300px','height':'178px'}" [ngStyle.lt-md]="{'width':'220px','height':'143px'}"
               (load)="index == 0 && getDimensions(element)" [src]="offer[index]" />
           </div>
         </div>
@@ -135,66 +154,26 @@
 
     </div>
 
-  </div>
+  </div> -->
 
-
-
-  <div style="background-color: #e9e44b;" class="slid">
-    <div #patners >
-      <div class="slides">
-        <!-- <h1 class="text-center  " style="font-style: italic;"> We Successfully Advertisered The below Advertisers</h1> -->
-      </div>
-      <!-- Commented sliding patners on 20-12-2022 -->
-      <!-- <owl-carousel-o [options]="customOptions">
-
-        <ng-container style="margin-top: 10%;" *ngFor="let slide of imgdata;let i=index">
-          <ng-template style="margin-top: 10%;" class="slide" carouselSlide [id]="slide.id">
-            <img [ngStyle]="{'height':'45px','width':'135px'}" class='mb-3'
-              [ngStyle.sm]="{'height':'100%','width':'100%'}" [src]="slide.img" [alt]="slide.id">
-          </ng-template>
-        </ng-container>
-
-      </owl-carousel-o> -->
-    
-
-      <div  id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
-        <div  class="carousel-inner">
-          <div  class="  carousel-item active">
-            <div class="row">
-            <div class="column">
-            <img src="assets/images/client-10.png"  alt="...">
-          </div>
-          <div class="column">
-            <img src="assets/images/client-17.png"  alt="...">
-          </div>
-          <div class="column">
-            <img src="assets/images/client-9.png"  alt="...">
-          </div>
-         
-          </div>
-          </div>
-          <div *ngFor="let data of image ; let i=index "   class="carousel-item ">
-            <div   class="row ">
-              <div  *ngFor="let dat of data;let v=index " style="padding-left:30px"  class="column">
-              <img [src]="data[v]"  alt="...">
-            </div>
-           
-            </div>
-          </div>
-          
+  <div #offers class="row container-fluid " style="margin-left: 0.2%;margin-top: 2%;margin-bottom: 0.5%;">
+    <div style="margin-bottom: 30px;" *ngFor="let data of imageData,let i=index" class="offerimg">
+      <div style="margin-top: 1%px;border-radius: 10px;" class="card " (click)="cardClicked(data)"
+        (mouseover)="cardClicked(data)" [@cardFlip]="data.state">
+        <div class="face back " style="border-radius: 10px;">
+          <img src="{{data.imageId}}" />
         </div>
-        <button   class="carousel-control-prev " type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
-          <span  class="carousel-control-prev-icon " aria-hidden="true"></span>
-          <span class="visually-hidden">Previous</span>
-        </button>
-        <button   class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="next">
-          <span   class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span  class="visually-hidden">Next</span>
-        </button>
-      </div>
+        <div class="face front" style="border-radius: 10px; ">
+          <p class="justify-content-center cardoffer" >{{data.msg}}</p>
 
+        </div>
+      </div>
     </div>
   </div>
+
+
+
+
 
 
   <div #advertiser>
@@ -226,6 +205,79 @@
           Advertiser</a>
 
       </div>
+    </div>
+  </div>
+  <div style="background-color: #ffc932;" class="slid">
+    <div #partners>
+      <div class="slides">
+        <!-- <h1 class="text-center  " style="font-style: italic;"> We Successfully Advertisered The below Advertisers</h1> -->
+      </div>
+      <!-- Commented sliding partners on 20-12-2022 -->
+      <!-- <owl-carousel-o [options]="customOptions">
+
+        <ng-container style="margin-top: 10%;" *ngFor="let slide of imgdata;let i=index">
+          <ng-template style="margin-top: 10%;" class="slide" carouselSlide [id]="slide.id">
+            <img [ngStyle]="{'height':'45px','width':'135px'}" class='mb-3'
+              [ngStyle.sm]="{'height':'100%','width':'100%'}" [src]="slide.img" [alt]="slide.id">
+          </ng-template>
+        </ng-container>
+
+      </owl-carousel-o> -->
+
+
+      <div id="carouselExampleAutoplaying" class="carousel slide slidedata" data-bs-ride="carousel">
+        <div class="carousel-inner">
+          <div class="  carousel-item active">
+            <div class="row">
+              <div class="column">
+                <img src="assets/images/client-10.png" alt="...">
+              </div>
+              <div class="column ">
+                <img src="assets/images/client-17.png" alt="...">
+              </div>
+              <div class="column ">
+                <img src="assets/images/client-9.png" alt="...">
+              </div>
+
+            </div>
+          </div>
+          <div *ngFor="let data of image ; let i=index " class="carousel-item ">
+            <div class="row ">
+              <div *ngFor="let dat of data;let v=index " style="padding-left:30px" class="column ">
+                <img [src]="data[v]" alt="...">
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+        <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="prev">
+          <!-- <span  class="carousel-control-prev-icon red" aria-hidden="true"></span> -->
+
+          <!-- <img style="background-color: #facc76;" src="assets/icons/icons8-back.gif" class="aria-hidden" aria-hidden="true" alt=""> -->
+          <span class="visually-hidden">Previous</span>
+          <span class="svgdat">
+            <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" style="color:rgb(49, 49, 49)"
+              fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z" />
+            </svg>
+          </span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+          data-bs-slide="next">
+          <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
+          <span class="svgdata"> <svg xmlns="http://www.w3.org/2000/svg" style="color:rgb(49, 49, 49) ;" width="50"
+              height="50" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
+              <path fill-rule="evenodd"
+                d="M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z" />
+            </svg>
+          </span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+
     </div>
   </div>
   <div #publisher>
@@ -264,7 +316,7 @@
       </div>
       <div class="contact-form">
         <form [formGroup]="form" (ngSubmit)="submit()">
-          <div class='mb-3 '>
+          <div class='mb-3 name'>
             <label for="name" class="form-label">My name is </label> &nbsp;
             <input type="text" formControlName="name" style='padding-right:3%' class="no-outline" placeholder="">
           </div>
@@ -278,7 +330,7 @@
             </select>
           </div>
           <div class="mb-3">
-            <label for="detail" class="mb-2 textlabel">Here are some details...</label>
+            <label for="detail" class="mb-2 textlabel" >Here are some details...</label>
 
             <textarea class="form-control " formControlName="detail" placeholder="Leave a comment here"
               id="floatingTextarea2"></textarea>
@@ -309,9 +361,9 @@
     </iframe>
         </div> -->
     </div>
-    <div *ngIf="width<600" class=" container">
+    <div *ngIf="width<600" class=" container" style="position:relative;left:5vw">
       <div style="margin-left: 1%;">
-        <h1>Ask Us Anything!</h1>
+        <h1 align="center">Ask Us Anything!</h1>
       </div>
       <div>
         <form [formGroup]="form" (ngSubmit)="submit()">
@@ -440,40 +492,124 @@
         </div>
 
       </div>
-    </div> -->
+    </div>  -->
 
-    <div style="background-color: aqua;height: 400px;" class="row" >
-      <div style="width: 35%;"></div>
-      <div style="width: 65%;">
-      <div fxHide.lt-md  style="padding-top: 50px;justify-items: flex-end;" class=" col-md-6 ">
-        <div>
-<span style="    position: relative;
-top: 45px;
-left: 30px;">
-  <img style="    height: 73px;
-  width: 85px;
-  border-radius: 1rem;" src="assets/icons/flag.jpg" alt="">
-</span>
+    <div style="background-color: #2fb7a7;height: 285px;" class="row">
+      <div *ngIf="width>700" style="width: 35%;"></div>
+      <div *ngIf="width>600" style="width: 65%;">
+        <div style="padding-top: 2px;justify-items: flex-end;" class=" col-md-6 ">
+          <div>
+            <span class="iconlogo">
 
-  <h1 align="center"> India Headquarter </h1>
-  
-          <address class="address">
- 
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50"
+                viewBox="0 0 73.5 73.5">
+                <defs>
+                  <clipPath id="clip-path">
+                    <circle id="Ellipse_36" data-name="Ellipse 36" cx="35.25" cy="35.25" r="35.25"
+                      transform="translate(337.959 13578.255)" fill="none"></circle>
+                  </clipPath>
+                </defs>
+                <g id="Group_2155" data-name="Group 2155" transform="translate(-336.459 -1107.5)">
+                  <g id="Group_179" data-name="Group 179" transform="translate(0 -12469.255)">
+                    <g id="Group_178" data-name="Group 178">
+                      <g id="Group_177" data-name="Group 177" clip-path="url(#clip-path)">
+                        <g id="Group_176" data-name="Group 176">
+                          <path id="Path_1723" data-name="Path 1723"
+                            d="M369.221,13657.277l-.435-51.582s-.653-2.829-6.53-2.829c-6.094,0-7.182,2.394-7.182,2.394l-2.612,52.018"
+                            fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="3"></path>
+                          <path id="Path_1724" data-name="Path 1724" d="M369.221,13657.06,369,13618.1h7.4l.435,38.958"
+                            fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="3"></path>
+                          <path id="Path_1725" data-name="Path 1725"
+                            d="M400.344,13657.06l-5.006-52.67-15.018-6.747.435,59.417" fill="none" stroke="#fff"
+                            stroke-miterlimit="10" stroke-width="3"></path>
+                        </g>
+                      </g>
+                    </g>
+                    <circle id="Ellipse_37" data-name="Ellipse 37" cx="35.25" cy="35.25" r="35.25"
+                      transform="translate(337.959 13578.255)" fill="none" stroke="#fff" stroke-miterlimit="10"
+                      stroke-width="3"></circle>
+                  </g>
+                </g>
+              </svg>
 
-            <p><strong>Mobpro </strong><br><br>
+            </span>
 
-              418,Vipul Trade Center<br>Sector 48
+            <h1 align="center" class="heading"> India Headquarter </h1>
 
-              Gurugram, Haryana 122001, India</p>
+            <address class="address">
 
-            <p>Email : sales@mobprodigital.mobi</p>
 
-          </address>
+              <p><strong>Mobpro </strong><br><br>
+
+                418,Vipul Trade Center<br>Sector 48
+
+                Gurugram, Haryana 122001, India</p>
+
+              <p>Email : sales@mobprodigital.mobi</p>
+
+            </address>
+
+          </div>
 
         </div>
-
       </div>
-     </div>
+      <div *ngIf="width<600">
+        <div style="padding-top: 2px;justify-items: flex-end;" class=" col-md-6 ">
+          <div>
+            <span class="iconlogo">
+
+              <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="50" height="50"
+                viewBox="0 0 73.5 73.5">
+                <defs>
+                  <clipPath id="clip-path">
+                    <circle id="Ellipse_36" data-name="Ellipse 36" cx="35.25" cy="35.25" r="35.25"
+                      transform="translate(337.959 13578.255)" fill="none"></circle>
+                  </clipPath>
+                </defs>
+                <g id="Group_2155" data-name="Group 2155" transform="translate(-336.459 -1107.5)">
+                  <g id="Group_179" data-name="Group 179" transform="translate(0 -12469.255)">
+                    <g id="Group_178" data-name="Group 178">
+                      <g id="Group_177" data-name="Group 177" clip-path="url(#clip-path)">
+                        <g id="Group_176" data-name="Group 176">
+                          <path id="Path_1723" data-name="Path 1723"
+                            d="M369.221,13657.277l-.435-51.582s-.653-2.829-6.53-2.829c-6.094,0-7.182,2.394-7.182,2.394l-2.612,52.018"
+                            fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="3"></path>
+                          <path id="Path_1724" data-name="Path 1724" d="M369.221,13657.06,369,13618.1h7.4l.435,38.958"
+                            fill="none" stroke="#fff" stroke-miterlimit="10" stroke-width="3"></path>
+                          <path id="Path_1725" data-name="Path 1725"
+                            d="M400.344,13657.06l-5.006-52.67-15.018-6.747.435,59.417" fill="none" stroke="#fff"
+                            stroke-miterlimit="10" stroke-width="3"></path>
+                        </g>
+                      </g>
+                    </g>
+                    <circle id="Ellipse_37" data-name="Ellipse 37" cx="35.25" cy="35.25" r="35.25"
+                      transform="translate(337.959 13578.255)" fill="none" stroke="#fff" stroke-miterlimit="10"
+                      stroke-width="3"></circle>
+                  </g>
+                </g>
+              </svg>
+
+            </span>
+
+            <h1 align="center" style="margin-left: 6vw;"> India Headquarter </h1>
+
+            <address class="address">
+
+
+              <p><strong>Mobpro </strong><br><br>
+
+                418,Vipul Trade Center<br>Sector 48
+
+                Gurugram, Haryana 122001, India</p>
+
+              <p>Email : sales@mobprodigital.mobi</p>
+
+            </address>
+
+          </div>
+
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -481,7 +617,7 @@ left: 30px;">
 <div style="height: fit-content;">
   <div class="footer">
 
-<br> <br>
+    <br> <br>
     <ul class="nav contents">
       <li class="nav-item">
         <a class="nav-link active" aria-current="page" (click)="scroll(advertiser)">ADVERTISER</a>
@@ -499,7 +635,7 @@ left: 30px;">
         <a class="nav-link active" aria-current="page" (click)="scroll(publisher)">PUBLISHER</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" (click)="scroll(patners)">PATNERS</a>
+        <a class="nav-link" (click)="scroll(partners)">PARTNERS</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" (click)="scroll(contact)">CONTACT US</a>
@@ -509,10 +645,24 @@ left: 30px;">
     <br>
     <!-- </li> -->
 
-    <hr style="color: white;border-top:4px solid white;">
-    <p style="font-size: 30px;"> © 2023 Mobpro. All rights reserved
+    <hr style="color: white;border-top:1px solid white;position : relative; left:15%;width: 70%;"
+      class="justify-content-center  ">
+    <p style="font-size: 17px;"> © 2023,All Rights Reserved To Mobpro.
       <!-- <li class="nav-item"> -->
+
     </p>
+    <ul class="nav contenting">
+      <li class="nav-item">
+        <a class="nav-link active" aria-current="page"> Advertisers Terms & Conditions</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Privacy Policy</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link">Publishers Term & Conditions</a>
+      </li>
+
+    </ul>
     <br>
 
     <a (click)="scroll(home)" class="back-to-top  " style="display: block;
