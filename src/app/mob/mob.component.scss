@@ -47,4 +47,34 @@ nav.nav--hidden {
 .visible {
   display: block;
 }
+.carousel-container {
+  height: 300px;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel-slide {
+  height: 300px;
+  position: absolute;
+  bottom: -300px;
+  opacity: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.carousel-slide.active {
+  bottom: 0;
+  opacity: 1;
+}
+
+.carousel-slide.previous {
+  bottom: 300px;
+  opacity: 0;
+}
+
+.carousel-slide.next {
+  bottom: -600px;
+  opacity: 0;
+}
+
+
 

@@ -1,173 +1,684 @@
 <div #home>
-  <div *ngIf="width>600" class="header   ">
+  <div *ngIf="width>600" class="header">
     <div style="height: 10px;">
-      <img src="assets/mobpro.jpg" class="logo" alt="">
+      <img src="assets/icons/mobprologo.png" class="logo" alt="">
     </div>
-
-    <ul #Home class="nav ">
-      <li class="nav-item">
-        <a class="nav-link active" (click)="scroll(Home)">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" (click)="scroll(offers)">We Offer</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" (click)="scroll(partners)">Our Partners </a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" (click)="scroll(advertiser)">Advertisers </a>
-      </li>
-      <li class="nav-item">
+    <div class="row">
+      <ul #Home class="nav col rightnav">
+        <li class="nav-item">
+          <a class="nav-link active" (click)="scroll(home)">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/about">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="scroll(partners)">Our Partners </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="scroll(advertiser)">Advertisers/Publishers </a>
+        </li>
+        <!-- <li class="nav-item">
         <a class="nav-link" (click)="scroll(publisher)">Publishers </a>
-      </li>
-      <!-- <li class="nav-item">
+      </li> -->
+        <!-- <li class="nav-item">
       <a class="nav-link " style="cursor: pointer;">Why Us?</a>
-    </li> -->
-      <li class="nav-item">
-        <a class="nav-link " (click)="scroll(askus)">Ask Us</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link " (click)="scroll(contact)">Contact Us</a>
-      </li>
-    </ul>
+     </li> -->
+        <li class="nav-item leftnav">
+          <a class="nav-link " (click)="scroll(askus)">Ask Us</a>
+        </li>
+        <li class="nav-item leftnav">
+          <a class="nav-link " (click)="scroll(conus)">Contact Us</a>
+        </li>
+      </ul>
+      <!-- <ul class="nav col leftnav">
+       
+      </ul> -->
+    </div>
   </div>
-  <div *ngIf="width<500" class="Mobile" [ngStyle]="{'width':widths}">
+  <div *ngIf="width<600" class="Mobile" [ngStyle]="{'width':widths}">
     <div>
-      <img src="assets/mobpro.jpg" class="logo" alt="">
+      <img src="assets/icons/mobprologo.png" class="logo" alt="">
       <span class="nav-item ">
         <!-- <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
       My Profile
     </a> -->
-      
 
-          <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"> -->
-            <img src="assets/icons/menu.png" alt="" class=" menulogo" href="#" role="button"
-          data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop" aria-expanded="false">
-          <!-- </button> -->
-          
-          <div style="background-color: white;width: 50%;" class="offcanvas offcanvas-end" data-bs-backdrop="static" tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
-            <div class="offcanvas-header">
-              <!-- <h3 class="offcanvas-title" id="staticBackdropLabel" style="font-style: italic; color: white;">Please Click For Go To Particular Section </h3> -->
-              <!-- <button style="color: white;" type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
-              <i  class="bi bi-x-circle btn-close text-reset"  data-bs-dismiss="offcanvas" aria-label="Close"></i>
 
-            </div>
-            <div class="offcanvas-body">
+        <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"> -->
+        <img src="assets/icons/menu.png" alt="" class=" menulogo" href="#" role="button" data-bs-toggle="offcanvas"
+          data-bs-target="#staticBackdrop" aria-controls="staticBackdrop" aria-expanded="false">
+        <!-- </button> -->
 
-              <div>
-               <ul class=" nav flex-column logos" data-bs-dismiss="offcanvas">
+        <div style="background-color: #1E2222;width: 50%;" class="offcanvas offcanvas-end" data-bs-backdrop="static"
+          tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+          <div class="offcanvas-header">
+            <!-- <h3 class="offcanvas-title" id="staticBackdropLabel" style="font-style: italic; color: white;">Please Click For Go To Particular Section </h3> -->
+            <!-- <button style="color: white;" type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
+            <i class="bi bi-x-circle btn-close text-reset bg-primary" style="color: white;" data-bs-dismiss="offcanvas"
+              aria-label="Close"></i>
+
+          </div>
+          <div class="offcanvas-body">
+
+            <div>
+              <ul class=" nav flex-column logos" data-bs-dismiss="offcanvas">
 
 
                 <li class="nav-item">
-            <a class="nav-link active" (click)="scroll(home)">Home</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" (click)="scroll(offers)">We Offer</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" (click)="scroll(partners)">Our Partners </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" (click)="scroll(advertiser)">Advertisers </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" (click)="scroll(publisher)">Publishers </a>
-          </li>
-          <!-- <li class="nav-item">
+                  <a class="nav-link active" routerLink="/about">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" (click)="scroll(partners)">Our Patners</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" (click)="scroll(advertiser)">Advertiser/Publisher </a>
+                </li>
+                <!-- <li class="nav-item">
+                  <a class="nav-link">Advertisers </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" (click)="scroll(publisher)">Publishers </a>
+                </li> -->
+                <!-- <li class="nav-item">
         <a class="nav-link " style="cursor: pointer;">Why Us?</a>
       </li> -->
-      <li class="nav-item">
-            <a class="nav-link" (click)="scroll(askus)">Ask Us</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" (click)="scroll(contact)">Contact Us</a>
-          </li>
-        </ul>
-              </div>
+                <li class="nav-item">
+                  <a class="nav-link" (click)="scroll(askus)">Ask Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" (click)="scroll(askus)">Contact Us</a>
+                </li>
+              </ul>
             </div>
           </div>
+        </div>
 
-        
+
       </span>
     </div>
   </div>
 
-  <div>
-    <div *ngIf="width>620" class="video-containers ">
-      <video autoplay muted loop playsinline allow="autoplay" style="width: 100%;">
-        <source id="video-bgs" autoplay muted loop playsinline allow="autoplay" src="assets/work.mp4"
-          type="video/mp4" />
-        Your browser does not support HTML5 video.
+  <div appScroling>
+    <div class="w-100 col-12 marginbg">
+      <div class="for-mobile">
+        <img style=' width: 100%;height: 100%;' src="assets/icons/bgs.jpg" alt="">
 
-      </video>
-
+      </div>
+      <!-- <div class="bgimage"><span style="color: white;font-weight: 400px;">
+          <article class="bgimage-article">
+            <p> {{year}}.</p>
+            <p>Its all you</p>
+            <p>Its all MOBPRO DIGITAL</p>
+          </article>
+        </span>
+        <div class="v4_3111"></div>
+        
+      </div> -->
     </div>
-    <div *ngIf="width<619" class="video-containers ">
-      <div>
-        <video autoplay muted loop playsinline allow="autoplay" [ngStyle]="{'width':'100vw'}"
-          [ngStyle.lt-md]="{'width':widths}" [ngStyle.md]="{'width':widths}">
-          <source id="video-bgs" autoplay muted loop playsinline allow="autoplay" src="assets/work.mp4"
-            type="video/mp4" />
-          Your browser does not support HTML5 video.
 
-        </video>
+  </div>
+
+  <div #offers class="newoffer container-fluid">
+    <div class="container-fluid w-100" style="padding-top: 10%;">
+      <div *ngIf="width<900px" class=" row">
+        <div *ngFor="let item of offer ,let i=index" class="col-6 mt-3">
+          <img width="100%" src="assets/icons/{{item}}.png" alt="">
+        </div>
+
+      </div>
+
+      <div *ngIf="width>900px" class=" container-fluid ">
+        <div class="row container-fluid w-100 justify-content-center">
+          <div class="col-lg-4 col-md-6 uiux">
+            <div class=" ui-show">
+              <img style="width: 300px; height: 237px;" src="assets/icons/uiux.png" alt="">
+
+            </div>
+            <div *ngIf="width>600px" class="imagehidden   ">
+              <img class="image-inner" src="assets/icons/uis.png" alt="">
+              <article class="articl">
+                A speciaization of web design that delas with the controls people use to interact with a website or app.
+              </article>
+            </div>
+          </div>
+          <div class=" col-lg-4 col-md-6 affiliate">
+            <div class="affiliate-show">
+              <img style="width: 300px; height: 237px;margin-left: 4.12rem;" src="assets/icons/affiliate.png" alt="">
+            </div>
+            <div *ngIf="width>600px" class="imagehidden  " style="margin-left: 4.12rem">
+              <img class="image-inner" src="assets/icons/affilt.png" alt="">
+              <article class="articl ">
+                A marketing arrangement in which affiliates recieve a commission for each visit,singup orsale they
+                generate for a merchant.
+              </article>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 web">
+            <div class="web-show">
+              <img style="width: 300px; height: 237px;margin-left: 7rem;" src="assets/icons/web.png" alt="">
+            </div>
+            <div *ngIf="width>600px" class="imagehidden  " style="margin-left: 7rem">
+              <img class="image-inners" src="assets/icons/website.png" alt="">
+              <article class="articl">
+                The work that happens behind the scenes to make a website look great, work fast and perform well with a
+                seamless user experience.
+              </article>
+            </div>
+          </div>
+          <!-- <div class="imagehidden col mx-3 ">
+            <img class="image-inner" src="assets/icons/uis.png" alt="">
+            <article class="article">
+              A speciaization of web design that delas with the controls people use to interact with a website or app.
+            </article>
+          </div> -->
+        </div>
+        <div class="row container-fluid w-100 justify-content-center" style="margin-top: 10%;">
+          <div class="col-lg-4 col-md-6 app">
+            <div class=" app-show">
+              <img style="width: 300px; height: 237px;" src="assets/icons/app.png" alt="">
+
+            </div>
+            <div *ngIf="width>600px" class="imagehiddens col  ">
+              <img class="image-inner" src="assets/icons/ui.png" alt="">
+              <article class="articl">
+                The process of creating software applications that run on a mobile device,and a typical
+                mobile application utilizes a network connection to work with remote
+                computing resources.
+              </article>
+            </div>
+          </div>
+          <div class="col-md-4 software">
+            <div class="software-show">
+              <img style="width: 300px; height: 237px;margin-left: 4.12rem;" src="assets/icons/software.png" alt="">
+            </div>
+            <div *ngIf="width>600px" class="imagehiddens  " style="margin-left: 4.12rem">
+              <img class="image-inner" src="assets/icons/affilt.png" alt="">
+              <article class="articl ">
+                Software maintenance requires a dedicated team of professionals who are skilled in software
+                engineering and We have experience in software development, testing, and deployment.
+              </article>
+            </div>
+          </div>
+          <div class="col-lg-4 col-md-6 vas">
+            <div class="vas-show">
+              <img style="width: 300px; height: 237px;margin-left: 7rem;" src="assets/icons/vas.png" alt="">
+            </div>
+            <div *ngIf="width>600px" class="imagehiddens" style="margin-left: 7rem">
+              <img class="image-inners" src="assets/icons/website.png" alt="">
+              <article class="articl">
+                We have quality world wide traffic to achieve quality traffic to increase brand ROI for CPA based
+                  campaigns.
+              </article>
+            </div>
+          </div>
+          <!-- <div class="imagehidden col mx-3 ">
+            <img class="image-inner" src="assets/icons/uis.png" alt="">
+            <article class="article">
+              A speciaization of web design that delas with the controls people use to interact with a website or app.
+            </article>
+          </div> -->
+        </div>
       </div>
     </div>
   </div>
+  <div style="background-color: white;position: relative;bottom: 200px;width: 100%;height: 100%;">
+    <div #partners class="client">
+      <h2 style="text-align: center;">Our Clients</h2>
+      <div class="container w-100"
+        style="height: 100%;box-sizing: border-box;border: 5px solid #CC1794;margin-top: 4.8%;">
+        <div class="row container" style="margin-left: auto;margin-right: auto;margin-bottom: 4%;">
+          <div *ngFor="let item of clients,let i=index" class=" col-4 col-md-4 mt-3 ">
+            <!-- <div  class=" col-6 mt-3 "> -->
+            <img width="100%" [src]='item' alt="...">
 
-  <!-- <div  class="element_content ">
+            <!-- </div> -->
+          </div>
+          <!-- <div class="col col-md-4">
+            <img width="100%" src="assets/icons/c2.png" alt="">
+          </div>
+          <div class="col col-md-4">
+            <img width="100%" src="assets/icons/c3.png" alt="">
+          </div> -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="why-our">
+
     <div>
-      <h1 style="font-style:italic !important;">
-        <teximate #teximate [text]="name" [enter]="enterAnimation"></teximate>
-      </h1>
-    </div>
-  </div> -->
+      <h2>
+        Here’s why our customers choose us
+      </h2>
+      <div class="traffic">
+        <div *ngIf="width>600px" class="traffic-data">
+          <div class="row">
+            <div class="col col-md-6" style="margin-left: -6%">
+              <div class="row">
+                <h2 class="main-heading">
+                  Worldwide Clients
+                </h2>
+              </div>
+              <div class="row heading">
+                <h2>
+                  1k +
+                </h2>
+              </div>
+            </div>
+            <div class="col col-md-6" style="position: absolute;
+            right: -4%;
+            top: 11rem;">
+              <div class="row">
+                <h2 class="main-heading">
+                  Experience
+                </h2>
+              </div>
+              <div class="row heading">
+                <h2>
+                  5+
+                </h2>
+              </div>
+            </div>
+
+          </div>
+          <div class="row" style="padding-top: 8%;">
+            <div class="col col-md-6" style="margin-left: -6%">
+              <div class="row">
+                <h2 class="main-heading">
+                  Traffic
+                </h2>
+              </div>
+              <div class="row heading">
+                <h2>
+                  10 Million +
+                </h2>
+              </div>
+            </div>
+            <div class="col col-md-6" style="position: absolute;right: -10%;">
+              <div class="row">
+                <h2 class="main-heading">
+                  Quality
+                </h2>
+              </div>
+              <div class="row heading">
+                <h2>
+                  200k +
+                </h2>
+              </div>
+            </div>
+            <div>
+              <h2>
+
+              </h2>
+            </div>
+          </div>
+        </div>
+        <div class="traffic-full">
+          <div class="row  ">
+            <div class="col col-md-3">
+              <div class="row">
+                <h2 class="main-headings">
+                  Traffic
+                </h2>
+              </div>
+              <div class="row headings ">
+                <h2>
+                  10 Million +
+                </h2>
+              </div>
+            </div>
+            <div class="col col-md-3">
+              <div class="row">
+                <h2 class="main-headings">
+                  Worldwide Clients
+                </h2>
+              </div>
+              <div class="row headings ">
+                <h2>
+                  1k +
+                </h2>
+              </div>
+            </div>
+            <div class="col col-md-3">
+              <div class="row">
+                <h2 class="main-headings">
+                  Experience
+                </h2>
+              </div>
+              <div class="row headings ">
+                <h2>
+                  5 +
+                </h2>
+              </div>
+            </div>
+            <div class="col col-md-3">
+              <div class="row">
+                <h2 class="main-headings">
+                  Quality
+                </h2>
+              </div>
+              <div class="row headings ">
+                <h2>
+                  200k +
+                </h2>
+              </div>
+            </div>
 
 
-  <!-- <div #offers>
-    <div *ngIf="width>620" class="w-100  " style="height:350px">
-      <div class="row w-100 container offer">
-
-
-        <div class="carousels  offermargin" [style.width.px]="cellWidth">
-          <div #element class=" justify-content-center " *ngFor="let i of [0, 2, 4, 12, 14]; let index = index"
-            (mouseover)="indexToFront(index)" (click)="indexToFront(index)">
-            <img [ngStyle]="{'width':'300px','height':'178px'}" [ngStyle.lt-md]="{'width':'215px','height':'143px'}"
-              (load)="index == 0 && getDimensions(element)" [src]="offer[index]" />
           </div>
         </div>
       </div>
-
     </div>
-    <div *ngIf="width<619" class="w-100  " style="height: 220px;">
-      <div class="row w-100 container offer">
 
+  </div>
+  <div class="service">
+    <div>
+      <h2>
+        Services
+      </h2>
+      <div class="  container-fluid performance fadeInLeft mt-3">
+        <h3>Performance Marketing</h3>
+        <div class="row w-100" style="margin-left: auto;margin-right: auto;">
+          <div class=" col-lg-6 col-md-6">
+            <article>
+              <p> Looking towards dealing with a Performance based model? We will enable you to get a better ROI </p>
 
-        <div class="carousels  offermargin" [style.width.px]="cellWidth">
-          <div #element class=" justify-content-center " *ngFor="let i of [0, 2, 4, 12, 14]; let index = index"
-            (mouseover)="indexToFront(index)" (click)="indexToFront(index)">
-            <img [ngStyle]="{'width':'300px','height':'178px'}" [ngStyle.lt-md]="{'width':'220px','height':'143px'}"
-              (load)="index == 0 && getDimensions(element)" [src]="offer[index]" />
+              Performance-based advertising is becoming more common with the spread of electronic media, notably the
+              Internet, where it is possible to measure user actions resulting from advertisement. Performance Marketing
+              is different from Brand Marketing which focuses on awareness, consideration and opinions among target
+              consumers.
+            </article>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <img src="assets/icons/s1.png" alt="">
           </div>
         </div>
       </div>
+      <div class="  container-fluid video-marketing mt-3">
+        <h3>Video Marketing</h3>
+        <div class="row w-100" style="margin-left: auto;margin-right: auto;">
 
-    </div>
+          <div class="  col-md-6">
+            <img src="assets/icons/video-marketing.png" alt="">
+          </div>
+          <div class=" col-lg-6 col-md-6">
+            <article>
+              <p> Using ad inventory we will help you optimize your ad costs & display your ads to the customers who are
+                on priority.</p>
 
-  </div> -->
+              Increase Brand Awareness, Leads & Sales with Best Social Media Marketing Agency of Gurgaon. Creative
+              Campaigns powered by Performance. 2000 Campaigns
 
-  <div #offers class="row container-fluid " style="margin-left: 0.2%;margin-top: 2%;margin-bottom: 0.5%;">
-    <div style="margin-bottom: 30px;" *ngFor="let data of imageData,let i=index" class="offerimg">
-      <div style="margin-top: 1%px;border-radius: 10px;" class="card " (click)="cardClicked(data)"
-        (mouseover)="cardClicked(data)" [@cardFlip]="data.state">
-        <div class="face back " style="border-radius: 10px;">
-          <img src="{{data.imageId}}" />
-        </div>
-        <div class="face front" style="border-radius: 10px; ">
-          <p class="justify-content-center cardoffer" >{{data.msg}}</p>
-
+              By conducting well-thought-out multi-channel social media campaigns that go viral,
+              we get you the leads, sales, and brand recognition that your business needs to grow exponentially.
+            </article>
+          </div>
         </div>
       </div>
+      <div class="  container-fluid performance mt-3">
+        <h3>Display Marketing</h3>
+        <div class="row w-100" style="margin-left: auto;margin-right: auto;">
+          <div class="col-lg-6 col-md-6">
+            <article>
+              <p> With our publishers pool, Barter Deals and media tie-ups we help brands
+                to advertise on best available inventory on Fixed Buying and RON.
+              </p>
+              Increase Brand Awareness, Leads & Sales with Best Social Media Marketing Agency of Gurgaon. Creative
+              Campaigns powered by Performance. 2000 Campaigns
+
+              By conducting well-thought-out multi-channel social media campaigns that go viral,
+              we get you the leads, sales, and brand recognition that your business needs to grow exponentially.
+            </article>
+          </div>
+          <div class="col-lg-6 col-md-6">
+            <img src="assets/icons/display-advertising.png" alt="">
+          </div>
+        </div>
+      </div>
+      <div class="row container service-data" style="margin-left: auto;margin-right: auto;">
+        <div class=" col-md-4 mt-3">
+          <div class="col container">
+            <div class="row ">
+              <img width="100%" src="assets/icons/m2.png" alt="">
+            </div>
+            <div class="row" style="background: linear-gradient(107.6deg, #CC1696 0%, #CC5E1B 100%);
+              ; width:100%;height: 156px;    margin-left: auto;margin-right: auto;">
+              <div style="color:white;padding-top: 1%;">
+                <h4 style="text-align: center; font-size: 20px;">
+                  Vas
+                </h4>
+                <p style="align-items: center;text-align:center;font-size: 14px;">
+                  We have quality world wide traffic to achieve quality traffic to increase brand ROI for CPA based
+                  campaigns.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class=" col-md-4 mt-3">
+          <div class="col container">
+            <div class="row ">
+              <img width="100%" src="assets/icons/m4.png" alt="">
+            </div>
+            <div class="row" style="background: linear-gradient(107.6deg, #CC1696 0%, #CC5E1B 100%);
+              ; width:100%;height: 156px;    margin-left: auto;margin-right: auto;">
+              <div style="color:white;padding-top: 1%;">
+                <h4 style="text-align: center;font-size: 20px;">
+                  Social Media
+                </h4>
+                <p style="align-items: center;text-align:center;font-size: 14px;">
+                  Our dedicated team, increase brands social Media presence with Unique and creative ways to increase
+                  Branding Capabilities.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class=" col-md-4 mt-3">
+          <div class="col container">
+            <div class="row ">
+              <img width="100%" src="assets/icons/m3.png" alt="">
+            </div>
+            <div class="row" style="background: linear-gradient(107.6deg, #CC1696 0%, #CC5E1B 100%);
+              ; width:100%;height: 156px;    margin-left: auto;margin-right: auto;">
+              <div style="color:white;padding-top: 1%;">
+                <h4 style="text-align: center;font-size: 20px;">
+                  Influencer Marketing
+                </h4>
+                <p style="align-items: center;text-align:center;font-size: 14px;">
+                  Using the most talked influencer to highlight your brand and reach the target audience through social
+                  media
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="integrating-partners ">
+    <h2>
+      Our Integrations partners
+    </h2>
+    <div #advertiser class="row container justify-content-center"
+      style="margin-left: auto;margin-right: auto;align-items: center;">
+      <div *ngFor="let item of partner" class="col col-4 ">
+        <img width="100%" src={{item}} alt="">
+      </div>
+    </div>
+  </div>
+  <div class="  Publisher-advertiser">
+    <div>
+      <h2>Advertiser/Publisher</h2>
+    </div>
+    <div class="row container " style="padding-top: 1%;">
+      <div class="publisher col-md-6 ">
+        <img width="100%" src="assets/icons/publisher.png" alt="">
+        <div class="pusblisher-span">
+          <a href=" https://mobpro.trackier.io/advertiser/" target="_blank">Become a Publisher</a>
+        </div>
+      </div>
+      <div class="advertiser col-md-6">
+        <img width="100%" src="assets/icons/advertiser.png" alt="">
+        <div class="advertiser-span">
+          <a href=" https://mobpro.trackier.io/advertiser/" target="_blank">Become an Advertiser</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div #askus class="asking-anything">
+    <h2>Ask Us</h2>
+
+    <div style="background-image: url(assets/icons/ask.png);height: 100%;">
+      <div class="row ">
+        <div class="col mt-3" style='margin-left: 2%;padding-top: 4%;'>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.4112247342937!2d77.03964351455434!3d28.406846001011377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d2299943b9043%3A0x2f521df48a7e3413!2sVipul%20Trade%20Centre!5e0!3m2!1sen!2sin!4v1672724488687!5m2!1sen!2sin"
+            width='700' height="430" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <div class=" asking-form col-md-4">
+          <h2
+            style="font-family: 'Gothic A1';font-style: normal;font-weight: 800;font-size: 20px;align-items: center;text-align: center;padding-top: 2%;color: rgba(0, 0, 0, 0.8);">
+            FEEDBACK FORM
+          </h2>
+          <form class="asking-anything-form" action="" [formGroup]="form" (ngSubmit)="submit()">
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="floatingInput" formControlName="name"
+                placeholder="name@example.com">
+              <label for="floatingInput">Name</label>
+            </div>
+            <div class="form-floating">
+              <input type="text" formControlName="email" class="form-control" id="floatingPassword"
+                placeholder="Password">
+              <label for="floatingPassword">Email</label>
+            </div>
+            <div class="form-floating">
+              <input type="text" class="form-control" formControlName="phone" id="floatingPassword"
+                placeholder="Password">
+              <label for="floatingPassword">Phone</label>
+            </div>
+            <div class=" form-floating">
+              <select class="form-select" id="floatingSelect">
+                <option selected>How did you hear about us</option>
+                <option value="1">One</option>
+                <option value="2">Two</option>
+                <option value="3">Three</option>
+              </select>
+              <!-- <label for="floatingSelect">Works with selects</label> -->
+            </div>
+            <div class="form-floating">
+              <input type="text" class="form-control" formControlName="message" id="floatingPassword"
+                placeholder="Password">
+              <label for="floatingPassword">Message</label>
+            </div>
+            <div class="mt-3 justify-items end" align="center">
+              <button type="submit" class="btn btn-dark ask-button">SEND MESSAGE</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div #conus style="background-color: white;margin-top: 3%;">
+    <!-- <div></div> -->
+    <div class="col-md-6" style="margin-left: 12%;">
+      <div>
+        <img src="assets/icons/Vector.png" style="width: 100px;width: 120px;" alt="">
+        <span style="    font-size: 25px;position: relative;top: 10%;font-weight: 600;color:black">
+          <!-- <p > -->
+          Gurgaon Office
+          <!-- </p>  -->
+        </span>
+        <p style=" font-size:20px;font-weight: 400;color:black;padding-top: 3%;line-height: 1.4;">
+          Mobpro Digitech Private Limited 418, 4th Floor, Vipul Trade Center,Sector-48, Gurugram, Haryana - 122018
+          View on Google Map
+        </p>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="width>728px" style="width: 100%;height:300px ;background-color: #000000;">
+    <div class="row container" style="margin-left: auto;margin-right: auto; margin-top: 2%;">
+      <div class=" col-md-3">
+        <img style="width: 150px;margin-top: 10%;" src="assets/icons/mobprologo.png" alt="">
+        <p style="color: white;padding-top: 5%;">
+          Mobpro Digital Service LLP is an online performance-based advertising agency. We are a Results
+          driven affiliate marketing agency serving the world from Gurgaon , India .
+        </p>
+      </div>
+      <div class=" col-md-3 service-footer " style="padding-top: 2%;color: white;padding-left:8%">
+        <h2 style="color: white;">
+          Our Services
+        </h2>
+        <div>
+          <h5>
+            SEO Services
+          </h5>
+          <h5>
+            Digital Marketing
+          </h5>
+          <h5>
+            Affiate Marketing
+          </h5>
+          <h5>
+            Web Development
+          </h5>
+          <h5>
+            Web Design
+          </h5>
+
+          <h5>App Development</h5>
+        </div>
+      </div>
+      <div class=" col-md-3 service-footer " style="padding-top: 2%;color: white;padding-left: 6%;">
+        <h2 style="color: white;">
+          Our Services
+        </h2>
+        <div>
+          <h5 (click)="scroll(home)">
+            Home
+          </h5>
+          <h5 routerLink="/about">
+            About Us
+          </h5>
+          <h5 (click)="scroll(partners)">
+            Our Partners
+          </h5>
+          <h5 (click)="scroll(publisher)">
+            Publisher/
+            Advertiser
+          </h5>
+          <h5 (click)="scroll(askus)">
+            Ask Us
+          </h5>
+
+          <!-- <h5>App Development</h5> -->
+        </div>
+      </div>
+      <div class=" col-md-3" style="padding-top: 10%;color: white;padding-left: 4%;">
+        <h2>
+          <!-- Contact Us -->
+          <div class=" row contac">
+            <div class="col">
+              <img src="assets/icons/phone.png" alt="">
+              <span style="font-size: 14px;">
+                sales@mobprodigital.com
+              </span>
+            </div>
+            <div class="mt-3">
+              <img class="col " src="assets/icons/instag.png" alt="">
+              <img class="col mx-3" src="assets/icons/facb.png" alt="">
+              <img class="col mx-3" src="assets/icons/link.png" alt="">
+              <img class="col mx-3" src="assets/icons/tweet.png" alt="">
+            </div>
+          </div>
+        </h2>
+      </div>
+      <!-- <div class="col col-md-3">
+
+        </div> -->
     </div>
   </div>
 
@@ -176,7 +687,12 @@
 
 
 
-  <div #advertiser>
+
+
+
+
+
+  <!-- <div #advertiser>
     <div *ngIf="width>620" class="video-containers">
       <video autoplay muted loop playsinline allow="autoplay" [ngStyle]="{'width':'100vw'}"
         [ngStyle.lt-md]="{'width':widths}">
@@ -206,26 +722,25 @@
 
       </div>
     </div>
-  </div>
-  <div style="background-color: #ffc932;" class="slid">
+  </div> -->
+  <!-- <div style="background-color: #ffc932;" class="slid">
     <div #partners>
       <div class="slides">
-        <!-- <h1 class="text-center  " style="font-style: italic;"> We Successfully Advertisered The below Advertisers</h1> -->
-      </div>
-      <!-- Commented sliding partners on 20-12-2022 -->
-      <!-- <owl-carousel-o [options]="customOptions">
+      </div> -->
+  <!-- Commented sliding partners on 20-12-2022 -->
+  <!-- <owl-carousel-o [options]="customOptions">
 
         <ng-container style="margin-top: 10%;" *ngFor="let slide of imgdata;let i=index">
           <ng-template style="margin-top: 10%;" class="slide" carouselSlide [id]="slide.id">
-            <img [ngStyle]="{'height':'45px','width':'135px'}" class='mb-3'
+            <img (click)="new()" [ngStyle]="{'height':'45px','width':'135px'}" class='mb-3'
               [ngStyle.sm]="{'height':'100%','width':'100%'}" [src]="slide.img" [alt]="slide.id">
           </ng-template>
         </ng-container>
 
       </owl-carousel-o> -->
 
-
-      <div id="carouselExampleAutoplaying" class="carousel slide slidedata" data-bs-ride="carousel">
+  <!-- 
+      <div id="carouselExampleAutoplaying" class="carousel slide " data-bs-ride="carousel">
         <div class="carousel-inner">
           <div class="  carousel-item active">
             <div class="row">
@@ -253,10 +768,10 @@
         </div>
         <button class="carousel-control-prev " type="button" data-bs-target="#carouselExampleAutoplaying"
           data-bs-slide="prev">
-          <!-- <span  class="carousel-control-prev-icon red" aria-hidden="true"></span> -->
+        <span  class="carousel-control-prev-icon red" aria-hidden="true"></span> -->
 
-          <!-- <img style="background-color: #facc76;" src="assets/icons/icons8-back.gif" class="aria-hidden" aria-hidden="true" alt=""> -->
-          <span class="visually-hidden">Previous</span>
+  <!-- <img style="background-color: #facc76;" src="assets/icons/icons8-back.gif" class="aria-hidden" aria-hidden="true" alt=""> -->
+  <!-- <span class="visually-hidden">Previous</span>
           <span class="svgdat">
             <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" style="color:rgb(49, 49, 49)"
               fill="currentColor" class="bi bi-chevron-left" viewBox="0 0 16 16">
@@ -267,7 +782,6 @@
         </button>
         <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
           data-bs-slide="next">
-          <!-- <span class="carousel-control-next-icon" aria-hidden="true"></span> -->
           <span class="svgdata"> <svg xmlns="http://www.w3.org/2000/svg" style="color:rgb(49, 49, 49) ;" width="50"
               height="50" fill="currentColor" class="bi bi-chevron-right" viewBox="0 0 16 16">
               <path fill-rule="evenodd"
@@ -276,41 +790,14 @@
           </span>
           <span class="visually-hidden">Next</span>
         </button>
-      </div>
+      </div> 
 
     </div>
-  </div>
-  <div #publisher>
-    <div *ngIf="width>620" class="video-containers">
-      <video style="width: 100%;" autoplay muted loop playsinline allow="autoplay">
-        <source id="video-bgs" autoplay muted loop playsinline allow="autoplay" allow="loop" src="assets/nw.mp4"
-          type="video/mp4" />
-        Your browser does not support HTML5 video.
+  </div> -->
 
-      </video>
-      <div class="d-grid gap-2 col-3 mx-auto justify-content-center forBtn">
-        <a class="btn btn-primary " href href=" https://mobpro.trackier.io/publisher" target="_blank">Become A
-          Publisher</a>
-        <!-- <button style="display: none;" id="btn">hello</button> -->
-      </div>
-    </div>
-    <div *ngIf="width<619" class="video-containers ">
-      <video autoplay muted loop playsinline allow="autoplay" [ngStyle]="{'width':'100vw'}"
-        [ngStyle.lt-md]="{'width':widths}">
-        <source id="video-bgs" autoplay muted loop playsinline src="assets/nw.mp4" type="video/mp4" />
-        Your browser does not support HTML5 video.
 
-      </video>
-      <div class="d-grid gap-2  mx-auto justify-content-center forBtn">
-        <a class="btn btn-primary justify-content-center" style='font-size: 12px;'
-          href=" https://mobpro.trackier.io/publisher/" target="_blank">Become A Publisher</a>
-
-      </div>
-    </div>
-  </div>
-
-  <div #askus class="row container justify-content-center askAny">
-    <div *ngIf="width>600" class=" container">
+  <!-- <div #askus class="row container justify-content-center askAny"> -->
+  <!-- <div *ngIf="width>600" class=" container">
       <div class="title col-12 ">
         <h1 class='justify-content-center'>Ask Us Anything!</h1>
       </div>
@@ -330,7 +817,7 @@
             </select>
           </div>
           <div class="mb-3">
-            <label for="detail" class="mb-2 textlabel" >Here are some details...</label>
+            <label for="detail" class="mb-2 textlabel">Here are some details...</label>
 
             <textarea class="form-control " formControlName="detail" placeholder="Leave a comment here"
               id="floatingTextarea2"></textarea>
@@ -354,14 +841,14 @@
             </button>
           </div>
         </form>
-      </div>
-      <!-- <h2 class="text-center" style="font-style: italic;">We Would like to meet at the below address</h2> -->
-      <!-- <div  class='container-fluid col-md-12 ' style="margin-left:10px">
+      </div> -->
+  <!-- <h2 class="text-center" style="font-style: italic;">We Would like to meet at the below address</h2> -->
+  <!-- <div  class='container-fluid col-md-12 ' style="margin-left:10px">
   <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.4112247342937!2d77.03964351455434!3d28.406846001011377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d2299943b9043%3A0x2f521df48a7e3413!2sVipul%20Trade%20Centre!5e0!3m2!1sen!2sin!4v1672724488687!5m2!1sen!2sin" width='600' height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
     </iframe>
         </div> -->
-    </div>
-    <div *ngIf="width<600" class=" container" style="position:relative;left:5vw">
+  <!-- </div> -->
+  <!-- <div *ngIf="width<600" class=" container" style="position:relative;left:5vw">
       <div style="margin-left: 1%;">
         <h1 align="center">Ask Us Anything!</h1>
       </div>
@@ -405,18 +892,27 @@
             </button>
           </div>
         </form>
-      </div>
-      <!-- <h2 class="text-center" style="font-style: italic;">We Would like to meet at the below address</h2> -->
-      <!-- <div  class='container-fluid col-md-12 ' style="margin-left:10px">
+      </div> -->
+  <!-- <h2 class="text-center" style="font-style: italic;">We Would like to meet at the below address</h2> -->
+  <!-- <div  class='container-fluid col-md-12 ' style="margin-left:10px">
   <iframe  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3509.4112247342937!2d77.03964351455434!3d28.406846001011377!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d2299943b9043%3A0x2f521df48a7e3413!2sVipul%20Trade%20Centre!5e0!3m2!1sen!2sin!4v1672724488687!5m2!1sen!2sin" width='600' height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
     </iframe>
         </div> -->
-    </div>
+</div>
+<a (click)="scroll(home)" class="back-to-top  " style="display: block;
+    position: fixed;
+    bottom: 20px;
+    cursor: pointer;
+    right: 17px;"> <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor"
+    class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
+    <path fill-rule="evenodd"
+      d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
+  </svg>
+</a>
+<!-- </div> -->
 
-  </div>
-
-  <div #contact class="container-fluid">
-    <!-- <div class="row">
+<!-- <div #contact class="container-fluid"> -->
+<!-- <div class="row">
       <div *ngIf="width>600" class="col-md-6 ">
         <div class="contus">
           <iframe
@@ -494,7 +990,7 @@
       </div>
     </div>  -->
 
-    <div style="background-color: #2fb7a7;height: 285px;" class="row">
+<!-- <div style="background-color: #2fb7a7;height: 285px;" class="row">
       <div *ngIf="width>700" style="width: 35%;"></div>
       <div *ngIf="width>600" style="width: 65%;">
         <div style="padding-top: 2px;justify-items: flex-end;" class=" col-md-6 ">
@@ -610,17 +1106,17 @@
 
         </div>
       </div>
-    </div>
-  </div>
-</div>
+    </div> -->
+<!-- </div> -->
+<!-- </div> -->
 
-<div style="height: fit-content;">
-  <div class="footer">
+<!-- <div style="height: fit-content;"> -->
+<!-- <div class="footer">
 
     <br> <br>
     <ul class="nav contents">
       <li class="nav-item">
-        <a class="nav-link active" aria-current="page" (click)="scroll(advertiser)">ADVERTISER</a>
+        <a class="nav-link active" aria-current="page">ADVERTISER</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" (click)="scroll(offers)">OUR EXPERTISE</a>
@@ -642,15 +1138,15 @@
       </li>
 
     </ul>
-    <br>
-    <!-- </li> -->
-
+    <br> -->
+<!-- </li> -->
+<!-- 
     <hr style="color: white;border-top:1px solid white;position : relative; left:15%;width: 70%;"
       class="justify-content-center  ">
-    <p style="font-size: 17px;"> © 2023,All Rights Reserved To Mobpro.
-      <!-- <li class="nav-item"> -->
+    <p style="font-size: 17px;"> © 2023,All Rights Reserved To Mobpro. -->
+<!-- <li class="nav-item"> -->
 
-    </p>
+<!-- </p>
     <ul class="nav contenting">
       <li class="nav-item">
         <a class="nav-link active" aria-current="page"> Advertisers Terms & Conditions</a>
@@ -664,17 +1160,8 @@
 
     </ul>
     <br>
+  </div> -->
 
-    <a (click)="scroll(home)" class="back-to-top  " style="display: block;
-                position: fixed;
-                bottom: 20px;
-                cursor: pointer;
-                right: 17px;"> <svg xmlns="http://www.w3.org/2000/svg" width="50" height="40" fill="currentColor"
-        class="bi bi-arrow-up-circle" viewBox="0 0 16 16">
-        <path fill-rule="evenodd"
-          d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-7.5 3.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z" />
-      </svg>
-    </a>
 
-  </div>
-</div>
+
+<!-- </div> -->

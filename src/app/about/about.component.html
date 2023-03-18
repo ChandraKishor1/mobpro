@@ -1,0 +1,312 @@
+<div>
+  <div [fxShow]="width>600" class="header">
+    <div style="height: 10px;">
+      <img src="assets/icons/mobprologo.png" class="logo" alt="">
+    </div>
+    <div class="row">
+      <ul #Home class="nav col rightnav">
+        <li class="nav-item">
+          <a class="nav-link active" href='#'>Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">About Us</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href='#'>Our Partners </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href='#'>Advertisers/Publishers </a>
+        </li>
+        <!-- <li class="nav-item">
+        <a class="nav-link" (click)="scroll(publisher)">Publishers </a>
+      </li> -->
+        <!-- <li class="nav-item">
+      <a class="nav-link " style="cursor: pointer;">Why Us?</a>
+    </li> -->
+        <!-- <ul class="nav col leftnav"> -->
+        <li class="nav-item leftnav">
+          <a class="nav-link " href='#'>Ask Us</a>
+        </li>
+        <li class="nav-item leftnav">
+          <a class="nav-link " href='#'>Contact Us</a>
+        </li>
+        <!-- </ul> -->
+      </ul>
+
+    </div>
+  </div>
+  <div *ngIf="width<600" class="Mobile" [ngStyle]="{'width':widths}">
+    <div>
+      <img src="assets/icons/mobprologo.png" class="logo" alt="">
+      <span class="nav-item ">
+        <!-- <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          My Profile
+        </a> -->
+
+
+        <!-- <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#staticBackdrop" aria-controls="staticBackdrop"> -->
+        <img src="assets/icons/menu.png" alt="" class=" menulogo" href="#" role="button" data-bs-toggle="offcanvas"
+          data-bs-target="#staticBackdrop" aria-controls="staticBackdrop" aria-expanded="false">
+        <!-- </button> -->
+
+        <div style="background-color: #1E2222;width: 50%;" class="offcanvas offcanvas-end" data-bs-backdrop="static"
+          tabindex="-1" id="staticBackdrop" aria-labelledby="staticBackdropLabel">
+          <div class="offcanvas-header">
+            <!-- <h3 class="offcanvas-title" id="staticBackdropLabel" style="font-style: italic; color: white;">Please Click For Go To Particular Section </h3> -->
+            <!-- <button style="color: white;" type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button> -->
+            <i class="bi bi-x-circle btn-close text-reset bg-primary" style="color: white;" data-bs-dismiss="offcanvas"
+              aria-label="Close"></i>
+
+          </div>
+          <div class="offcanvas-body">
+
+            <div>
+              <ul class=" nav flex-column logos" data-bs-dismiss="offcanvas">
+
+
+                <li class="nav-item">
+                  <a class="nav-link active" routerLink="/about">About Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Our Patners</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Advertiser/Publisher </a>
+                </li>
+                <!-- <li class="nav-item">
+                      <a class="nav-link">Advertisers </a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" (click)="scroll(publisher)">Publishers </a>
+                    </li> -->
+                <!-- <li class="nav-item">
+            <a class="nav-link " style="cursor: pointer;">Why Us?</a>
+          </li> -->
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Ask Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" (click)="scroll(askus)">Contact Us</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+
+      </span>
+    </div>
+  </div>
+  <div class="w-100 marginbg">
+    <img style=' width: 100%;' src="assets/icons/abg.png" alt="">
+    <!-- <div class="bgimage"><span style="color: white;font-weight: 400px;">
+        <article>
+          <p> {{year}}.</p>
+          <p>Its all you</p>
+          <p>Its all MOBPRO DIGITAL</p>
+        </article>
+      </span>
+      <div class="v4_3111"></div>
+
+    </div> -->
+  </div>
+  <div style="background-color: white;margin-top: 12%;">
+    <div class="container row padding">
+      <div class="who-we col-md-6">
+        <div class="who-we-are">
+          <h2 style="align-items: center;
+
+                    background: linear-gradient(90deg, #CC1696 0%, #CC5D1E 64.69%);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    background-clip: text;
+                    text-fill-color: transparent;">Who we are</h2>
+          <p style="font-size: 20px;
+          line-height:30px;">Mobpro Digital Service LLP is an online performance-based advertising network. We are a
+            Results
+            driven affiliate marketing agency serving the world from Gurgaon , India . We have experience
+            working with top affiliates in the major networks .</p>
+          <div class="read-more">
+            <button type="submit" class="btn btn-outline-dark sbt-btn" (click)=" whoWeAre()">Read more</button>
+          </div>
+        </div>
+
+      </div>
+      <!-- <div class=" image-who col"> -->
+      <div class="image-who col-md-6">
+        <img class="who-image" src="assets/icons/who-we.png" alt="">
+      </div>
+      <!-- </div> -->
+    </div>
+  </div>
+  <div class="what-we-margin">
+    <div class="what-we-do col-md-6">
+      <img src="assets/icons/what.png" alt="">
+
+    </div>
+    <div class="what-we col-md-6">
+      <div class="who-we-ares">
+        <h2>What we do</h2>
+        <article style="line-height: 25px;">
+          <p style="font-size: 20px;"> We are specialized in CPI,CPR,CPS,CPL and CPA mobile campaigns.</p>
+
+          <p style="font-size: 20px;
+          "> We are partners with global advertisers, app developers and publishers, enabling them to reach their
+            user acquisition and monetization goals. What we offer is a complete and comprehensive solution that
+            helps your business thrive and grow.</p>
+          <p style="font-size: 20px;">
+            Banner Ads
+            Branding Strategy
+          </p>
+        </article>
+        <div class="read-mor">
+          <button type="submit" class="btn btn-outline-dark sbt-btn" (click)="whatWeDo()">Read more</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row margin-why-us" style="background-color: white;">
+    <div class="why-us-bg col-md-12">
+      <img src="assets/icons/why-us.png" alt="">
+    </div>
+    <div class="why-us-content col-md-6">
+      <div class="why-us">
+        <h2>Why Us</h2>
+        <article style="font-size: 20px;
+        line-height:30px;">Because Mobpro gives the advertisers the best quality of performance
+          and help them to achieve their desired goals with quality leads and generation of brand awareness in
+          the market.
+        </article>
+        <div class="read-more">
+          <button type="submit" class="btn btn-outline-dark sbt-btn" (click)="whyUs()">Read more</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <br>
+  <br>
+  <!-- <div></div> -->
+  <div class="life-at">
+    <div style="background: linear-gradient(90.81deg, #FFB4B4 0%, #EFB162 100%);height: 65px;">
+      <h2 style="text-align: center;color: white;">Life at Mobrpo Digital</h2>
+    </div>
+    <div class="row container" style="margin-left:auto;margin-right: auto;">
+      <!-- <div class="col" style="width: 33%;
+            height: 100%;margin-left: 1%;"> -->
+      <img class=' col col-md-4 mt-3' style="
+                height: 100%" src="assets/icons/l1.png" alt="">
+      <!-- </div> -->
+      <!-- <div class="col" style="width: 33%;
+            height: 100%;margin-left: 1%;"> -->
+      <img class=' col col-md-4 mt-3 ' style="
+                height: 100%" src="assets/icons/l2.png" alt="">
+      <!-- </div> -->
+      <!-- <div class="col" style="width: 33%;
+            height:100% ;margin-left: 2%;"> -->
+      <img class=' col col-md-4 mt-3' style="
+                height: 100%" src="assets/icons/l3.png" alt="">
+      <!-- </div> -->
+    </div>
+  </div>
+  <div #askus style="background-color: white;margin-top: 3%;">
+    <!-- <div></div> -->
+    <div class="col-md-6" style="margin-left: 12%;">
+      <div>
+        <img src="assets/icons/Vector.png" style="width: 100px;width: 120px;" alt="">
+        <span style="    font-size: 25px;position: relative;top: 10%;font-weight: 600;color:black">
+          <!-- <p > -->
+          Gurgaon Office
+          <!-- </p>  -->
+        </span>
+        <p style=" font-size:20px;font-weight: 400;color:black;padding-top: 3%;line-height: 1.4;">
+          Mobpro Digitech Private Limited 418, 4th Floor, Vipul Trade Center,Sector-48, Gurugram, Haryana - 122018
+          View on Google Map
+        </p>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="width>728px" style="width: 100%;height:300px ;background-color: #000000;">
+    <div class="row container" style="margin-left: auto;margin-right: auto; margin-top: 2%;">
+      <div class=" col-md-3">
+        <img style="width: 150px;margin-top: 10%;" src="assets/icons/mobprologo.png" alt="">
+        <p style="color: white;padding-top: 5%;">
+          Mobpro Digital Service LLP is an online performance-based advertising network. We are a Results
+          driven affiliate marketing agency serving the world from Gurgaon , India .
+        </p>
+      </div>
+      <div class=" col-md-3 service-footer " style="padding-top: 2%;color: white;padding-left:8%">
+        <h2 style="color: white;">
+          Our Services
+        </h2>
+        <div>
+          <h5>
+            SEO Services
+          </h5>
+          <h5>
+            Digital Marketing
+          </h5>
+          <h5>
+            Affiate Marketing
+          </h5>
+          <h5>
+            Web Development
+          </h5>
+          <h5>
+            Web Design
+          </h5>
+
+          <h5>App Development</h5>
+        </div>
+      </div>
+      <div class=" col-md-3 service-footer " style="padding-top: 2%;color: white;padding-left: 6%;">
+        <h2 style="color: white;">
+          Our Services
+        </h2>
+        <div>
+          <h5 routerLink="/home">
+            Home
+          </h5>
+          <h5 routerLink="/about">
+            About Us
+          </h5>
+          <h5>
+            Our Partners
+          </h5>
+          <h5>
+            Publisher/
+            Advertiser
+          </h5>
+          <h5 (click)="scroll(askus)">
+            Ask Us
+          </h5>
+
+          <!-- <h5>App Development</h5> -->
+        </div>
+      </div>
+      <div class=" col-md-3" style="padding-top: 10%;color: white;padding-left: 4%;">
+        <h2>
+          <!-- Contact Us -->
+          <div class=" row contac">
+            <div class="col">
+              <img src="assets/icons/phone.png" alt="">
+              <span>
+                +91 7992217456
+              </span>
+            </div>
+            <div class="mt-3">
+              <img class="col " src="assets/icons/instag.png" alt="">
+              <img class="col mx-3" src="assets/icons/facb.png" alt="">
+              <img class="col mx-3" src="assets/icons/link.png" alt="">
+              <img class="col mx-3" src="assets/icons/tweet.png" alt="">
+            </div>
+          </div>
+        </h2>
+      </div>
+      <!-- <div class="col col-md-3">
+
+        </div> -->
+    </div>
+  </div>
+
+
+</div>

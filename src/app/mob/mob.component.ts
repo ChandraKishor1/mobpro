@@ -11,6 +11,69 @@ import { Scroll } from '@angular/router';
 })
 export class MobComponent 
  {
+image:any=[];
+  currentSlide = 0;
+  slides!: NodeListOf<Element>;
+
+  constructor() {
+  //   let c:any=[];
+  // for(let i=0;i<=6;i++){
+  //   for(let j=i+1;j<=3+i;j++){
+  //     c.push('assets/icons/c'+j+'.png')
+  //   }
+  //   this.image.push(c)
+  // }
+
+  for(let i=0;i<7;i++){
+    let d :any=[];
+    for(let j=3*i+1;j<=3*i+3;j++){
+d.push('assets/icons/c'+j+'.png')
+    }
+this.image.push(d);
+    
+  }
+  
+  console.log(this.image);
+  
+   }
+
+  ngOnInit(): void {
+    this.slides = document.querySelectorAll('.carousel-slide');
+    this.showSlide(this.currentSlide);
+    setInterval(() => {
+      this.currentSlide++;
+      this.showSlide(this.currentSlide);
+    }, 3000);
+  }
+
+  showSlide(n: number): void {
+    if (n > this.slides.length - 1) {
+      this.currentSlide = 0;
+    } else if (n < 0) {
+      this.currentSlide = this.slides.length - 1;
+    } else {
+      this.currentSlide = n;
+    }
+
+    this.slides.forEach(slide => {
+      slide.classList.remove('active', 'previous', 'next');
+    });
+
+    this.slides[this.currentSlide].classList.add('active');
+    if (this.slides[this.currentSlide - 1]) {
+      this.slides[this.currentSlide - 1].classList.add('previous');
+    } else {
+      this.slides[this.slides.length - 1].classList.add('previous');
+    }
+    if (this.slides[this.currentSlide + 1]) {
+      this.slides[this.currentSlide + 1].classList.add('next');
+    } else {
+      this.slides[0].classList.add('next');
+    }
+  }
+
+
+
 //   // showDiv = true; // set initial visibility
 //   lastScrollTop = 0;
 

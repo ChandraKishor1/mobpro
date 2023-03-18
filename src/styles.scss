@@ -9,7 +9,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   }
 @media (min-width: 320px) and (max-width :435px){
   html, body{
-    height: 100%;width: fit-content;overflow-x: hidden;
+    height: 100%;width: 100%;overflow-x: hidden;
   }
 }
 /* Importing Bootstrap SCSS file. */

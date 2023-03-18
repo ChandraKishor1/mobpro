@@ -82,6 +82,69 @@
   <h2>Fixed footer, with transition on hide/show.</h2>
 </div> -->
 
+<div class="carousel-container">
+  <div  class="carousel-slide">
+     
+
+  </div>
+  <!-- <div class="carousel-slide">
+    <img src="assets/icons/c2.png">
+    <img src="assets/icons/c2.png">
+    <img src="assets/icons/c2.png">
+
+  </div> -->
+  <!-- <div class="carousel-slide">
+    <img src="assets/icons/c3.png">
+    <img src="assets/icons/c2.png">
+
+    <img src="assets/icons/c2.png">
+
+  </div> -->
+</div>
+
+<div *ngFor="let item of image,let i=index ">
+  <div *ngFor="let d of item">
+
+<img [src]='d'>
+</div>
+
+</div>
+
+<!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Launch static backdrop modal
+</button>
+
+<!-- Modal -->
+<div  class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="background-color: #000;">
+      <div class="modal-header">
+        <h1 style="font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 40px;
+        line-height: 48px;
+        display: flex;
+        align-items: center;
+        
+        background: linear-gradient(90deg, #CC1696 0%, #CC5D1E 64.69%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;" class="modal-title fs-5" id="staticBackdropLabel">Why us</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Understood</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 

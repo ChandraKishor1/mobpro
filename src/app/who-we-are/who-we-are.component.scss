@@ -1,0 +1,43 @@
+.who-we-are{
+    background-color: #000;
+    width: 100%;
+height: 450px;
+}
+.who-we-are article{
+padding-left: 4%;
+}
+.who-we-are h2{
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    // line-height: 48px;
+    // display: flex;
+    padding-top: 4%;
+    padding-left:11%;
+    align-items: center;
+    
+    background: linear-gradient(90deg, #CC1696 0%, #CC5D1E 64.69%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+}
+.who-we-are p{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 20px;
+line-height: 29px;
+
+color: #FFFFFF;
+}
+.who-we-are h3{
+    font-family: 'Inter';
+font-style: normal;
+font-weight: 400;
+font-size: 24px;
+line-height: 29px;
+
+color: #FFFFFF;
+}

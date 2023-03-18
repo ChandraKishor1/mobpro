@@ -1,7 +1,8 @@
 import { trigger, state, style, transition, animate, AnimationBuilder, AnimationPlayer } from '@angular/animations';
 import { AfterViewInit, Component,NgZone, ElementRef, EventEmitter, Input, OnChanges, OnInit, Output, QueryList, ViewChild, ViewChildren, ChangeDetectorRef, Renderer2 } from '@angular/core';
 import { fadeInDown } from 'ng-animate';
-
+import {  Inject, PLATFORM_ID } from '@angular/core';
+import { isPlatformBrowser } from '@angular/common';
 import { TextAnimation } from 'ngx-teximate';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { FormGroup,FormBuilder, Validators } from '@angular/forms';
@@ -42,14 +43,14 @@ export interface CardData {
       ),
       transition("default => flipped", [animate("400ms")]),
       transition("flipped => default", [animate("400ms")]),
-      // transition("* => matched", [animate("400ms")])
+      transition("* => matched", [animate("400ms")])
     ])
   ]
 })
 
 
 export class HomeComponent implements OnInit,AfterViewInit,OnChanges {
-  @ViewChild('myhome') myhome:any;
+  @ViewChild('home') home:any;
   @ViewChild('teximate') teximate:any;
   disable:boolean=false;
   @ViewChild('publisher', { static: false })
@@ -122,7 +123,8 @@ width:any;
 ];
   url: any;
   offer: any=[];
-
+  clients:any=[];
+year:any;
   @ViewChildren('element')
   itemsView!: QueryList<ElementRef>;
     private player!: AnimationPlayer;
@@ -140,14 +142,20 @@ width:any;
     animates = [0, 2, 4, 12, 14];
     cellWidth!: number;
     marginTop:number=-((this.top * this.minScale) - this.top)/2;
-  constructor(private renderer: Renderer2,private fb:FormBuilder,private builder: AnimationBuilder,private myapi:ApiService,private ng :NgZone,private cdr: ChangeDetectorRef) {
-this.videourl='assets/work.mp4'
-  let x=['web','app','affiliate','testing','vas'];
-  let y=[];
-  for(let i=0;i<6;i++){
-    y.push('assets/'+x[i]+'.'+'jpg')
-  }
-this.offer=y;
+  platform: string;
+  partner:any=[];
+  constructor(@Inject(PLATFORM_ID) private platformId: any, private renderer: Renderer2,private fb:FormBuilder,private builder: AnimationBuilder,private myapi:ApiService,private ng :NgZone,private cdr: ChangeDetectorRef) {
+    this.platform = isPlatformBrowser(this.platformId) ? 'Browser' : 'Server';
+    console.log(this.platformId);
+    console.log(window.navigator.userAgent);
+    
+    this.videourl='assets/work.mp4'
+  let x=['uiux','affiliate','web','app','software','vas'];
+  // let y=[];
+  // for(let i=1;i<6;i++){
+  //   y.push('assets/'+x[i]+'.'+'jpg')
+  // }
+this.offer=x;
   
 
     let c=[]
@@ -156,11 +164,20 @@ this.offer=y;
 //  this.image.push('client'+'-'+i)
  this.imgdata.push({img:'assets'+'/'+'images'+'/'+'client'+'-'+i+'.'+'png',id:i})
     }
+
+// let clients=[]
+for(let i=1;i<=21;i++){
+  this.clients.push('assets/icons/c'+i+'.png')
+}
+// clients=this.clients
+console.log(this.clients);
+
+
 this.form=this.fb.group({
   name:['',Validators.required],
-  type:['',Validators.required],
-  detail:['',Validators.required],
-  company:['',Validators.required],
+  phone:['',Validators.required],
+  know:['How did you know about us',Validators.required],
+  message:['',Validators.required],
   email:['',[Validators.required,Validators.email]]
 
 })
@@ -169,8 +186,41 @@ localStorage.setItem('width',JSON.stringify(window.screen.availWidth) )
     ngOnChanges(){
 
     }
+     getPlatform() {
+      var platform = ["Win32", "Android", "iOS"];
+   
+      for (var i = 0; i < platform.length; i++) {
+   
+          if (navigator.platform.indexOf(platform[i]) >- 1) {
+   console.log(platform[i]);
+   
+              // return platform[i];
+          }
+      }
+   }
+   
+   
   ngOnInit(): void {
-    this.check()
+    let d=new Date()
+    this.year=d.getFullYear()
+    console.log(this.year);
+    
+
+let i=[];
+for(let i=1;i<=5;i++){
+this.partner.push( 'assets/icons/g'+i+'.'+'png')
+}
+console.log(this.partner);
+
+    // var body = document.getElementsByClassName('header');
+ 
+
+    // trigger this function every time the user scrolls
+ 
+
+   this.getPlatform();
+    
+    // this.check()
     // this. advertiser.nativeElement.play()
     for(let i=0;i<10;i++){
       let d :any=[];
@@ -188,7 +238,7 @@ this.image.push(d);
  
  
     // this.slideConfig
-    this.customOptions;
+  
     this.ng.run(() => {
       this.cdr.detectChanges();
     });
@@ -227,7 +277,7 @@ this.image.push(d);
 // this.publisher.nativeElement.loop=true;
     console.log('hello afyter');
     
-    this.customOptions
+   
 
 //  document.getElementsByTagName('video').item(3)?.play()
   }
@@ -252,13 +302,15 @@ this.image.push(d);
 //   }
   
 
-  check(){
-    if(window.screenY){
-      // this.myhome.nativeElement.style.position='fixed'
-      this.renderer.addClass(this.myhome.nativeElement, 'fixed-position');
-    }
-  }
-
+  // check(){
+  //   if(window.screenY){
+  //     // this.myhome.nativeElement.style.position='fixed'
+  //     this.renderer.addClass(this.myhome.nativeElement, 'fixed-position');
+  //   }
+  // }
+new(){
+  console.log('hello')
+}
   customOptions: OwlOptions = {
     loop: true,
     autoplay: true,
